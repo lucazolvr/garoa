@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="pixel.js"></script>
+<style>body{margin:0;background:#07061a;} a{color:#ffb43a;} a:hover{color:#ffdd7e;} img{image-rendering:pixelated;}</style>
+</helmet>
+<div data-screen-label="02 Página do caso" style="width:1440px; background:#07061a; font-family:'Pixelify Sans',monospace; color:#ebdfc2; display:flex; flex-direction:column;">
+  <div style="height:64px; flex:none; display:flex; align-items:center; gap:24px; padding:0 20px; background:#0e0d24; border-bottom:4px solid #302d68; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <img src="{{ A.icons.lupa }}" style="width:40px; height:40px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:28px; font-weight:700; color:#ffb43a; letter-spacing:3px; line-height:1;">GAROA</span>
+        <span style="font-size:12px; color:#9e9fc9; letter-spacing:2px; line-height:1;">DETETIVES EM REDE</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:4px; margin-left:16px;">
+      <div style="padding:8px 14px; font-size:16px; color:#9e9fc9;" style-hover="color:#ebdfc2; background:#161538;">MAPA</div>
+      <div style="padding:8px 14px; font-size:16px; background:#302d68; color:#ffdd7e; box-shadow:inset 0 -4px 0 #ffb43a;">MEUS CASOS</div>
+      <div style="padding:8px 14px; font-size:16px; color:#9e9fc9;" style-hover="color:#ebdfc2; background:#161538;">QUADROS</div>
+      <div style="padding:8px 14px; font-size:16px; color:#9e9fc9;" style-hover="color:#ebdfc2; background:#161538;">ARQUIVO</div>
+    </div>
+    <div style="margin-left:auto; width:48px; height:48px; border:4px solid #ffb43a; background:#161538; overflow:hidden; position:relative; box-sizing:border-box;">
+      <img src="{{ A.pt.vega }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;">
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:24px; padding:24px 32px 40px;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; gap:8px; font-size:14px; letter-spacing:1px; color:#9e9fc9;"><span style="color:#ffb43a;">MAPA</span><span>▸</span><span style="color:#ffb43a;">CENTRO LUZ</span><span>▸</span><span>HOTEL ALVORADA</span></div>
+      <div style="display:flex; align-items:flex-end; gap:24px;">
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <span style="font-size:16px; color:#ffb43a; letter-spacing:2px;">CASO #0412</span>
+            <span style="font-size:14px; padding:2px 8px; background:#4fd1c5; color:#07061a; letter-spacing:1px;">EM ANDAMENTO</span>
+            <span style="font-size:14px; padding:2px 8px; background:#221f4e; color:#9e9fc9; letter-spacing:1px;">DIFICULDADE ■■■□□</span>
+          </div>
+          <h1 style="margin:0; font-size:48px; font-weight:700; line-height:1; color:#ebdfc2; letter-spacing:1px;">O Relógio Parado</h1>
+          <span style="font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9;">Aberto por @vega há 3 dias · 5 detetives · última atividade há 4 min</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <div style="font-size:16px; letter-spacing:1px; color:#ebdfc2; background:#302d68; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #221f4e, inset 4px 4px 0 #46457f; padding:10px 16px; cursor:pointer;" style-hover="background:#46457f;">SEGUIR CASO</div>
+          <div style="font-size:16px; letter-spacing:1px; color:#ebdfc2; background:#302d68; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #221f4e, inset 4px 4px 0 #46457f; padding:10px 16px; cursor:pointer;" style-hover="background:#46457f;">ABRIR QUADRO</div>
+          <div style="font-size:16px; letter-spacing:1px; color:#07061a; background:#ffb43a; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #c26f1f, inset 4px 4px 0 #ffdd7e; padding:10px 16px; cursor:pointer;" style-hover="background:#ffdd7e;" style-active="box-shadow:inset 4px 4px 0 #c26f1f;">FAZER ACUSAÇÃO</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:24px; align-items:flex-start;">
+      <div style="width:656px; flex:none; background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:4px; box-sizing:content-box;">
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>CENA DO CRIME · QUARTO 304</span><span style="color:#9e9fc9; font-size:14px;">5 DE 7 PONTOS</span></div>
+        <div style="position:relative; width:640px; height:384px; margin:4px auto 0; overflow:hidden;">
+          <img src="{{ A.scene }}" style="width:640px; height:384px; display:block;">
+          <img src="{{ A.ch.detLupa }}" style="position:absolute; left:100px; top:276px; width:64px; height:96px;">
+          <img src="{{ A.ch.pol }}" style="position:absolute; left:556px; top:248px; width:64px; height:96px;">
+          <div style="position:absolute; left:292px; top:36px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:#e2433b; color:#f6f0e2; font-size:14px; border:4px solid #07061a; box-sizing:border-box; cursor:pointer;">1</div>
+          <div style="position:absolute; left:160px; top:156px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:#ffb43a; color:#07061a; font-size:14px; border:4px solid #07061a; box-sizing:border-box;">2</div>
+          <div style="position:absolute; left:360px; top:288px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:#ffb43a; color:#07061a; font-size:14px; border:4px solid #07061a; box-sizing:border-box;">3</div>
+          <div style="position:absolute; left:520px; top:280px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:#ffb43a; color:#07061a; font-size:14px; border:4px solid #07061a; box-sizing:border-box;">4</div>
+          <div style="position:absolute; left:412px; top:332px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; background:#ffb43a; color:#07061a; font-size:14px; border:4px solid #07061a; box-sizing:border-box;">5</div>
+          <div style="position:absolute; left:248px; top:56px; width:112px; height:80px; border:4px dashed #e2433b; box-sizing:border-box;"></div>
+          <div style="position:absolute; left:368px; top:64px; width:200px; background:#07061a; border:4px solid #e2433b; padding:8px; display:flex; flex-direction:column; gap:4px; box-sizing:border-box;">
+            <span style="font-size:14px; color:#e2433b; letter-spacing:1px;">PISTA IMPORTANTE</span>
+            <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.4; color:#ebdfc2;">Relógio parado às 22:17. Vidro intacto.</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; font-family:'Courier Prime',monospace; font-size:14px; color:#9e9fc9;"><span>Encontrado às 23:40 · chuva forte · janela aberta</span><span style="font-family:'Pixelify Sans'; color:#ffb43a;">CLIQUE PARA EXAMINAR</span></div>
+      </div>
+
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:20px;">
+        <div style="background:#ebdfc2; color:#221f4e; border:4px solid #07061a; box-shadow:8px 8px 0 #000; padding:20px 24px; display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-size:18px; letter-spacing:2px; color:#8c1e2d;">RELATÓRIO POLICIAL</span><span style="font-size:14px; color:#6a4628;">FL. 1/1</span></div>
+          <p style="margin:0; font-family:'Courier Prime',monospace; font-size:16px; line-height:1.6; text-wrap:pretty;">Otávio Brandão, 67, relojoeiro, foi encontrado sem vida no quarto 304 do Hotel Alvorada. Hospedava-se ali havia uma semana. O relógio de parede está parado às 22:17. A janela estava aberta, apesar da chuva.</p>
+          <p style="margin:0; font-family:'Courier Prime',monospace; font-size:16px; line-height:1.6; text-wrap:pretty;">Não há sinais de arrombamento na porta. Uma xícara de chá quebrada foi recolhida para perícia.</p>
+        </div>
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+          <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>PROGRESSO DA INVESTIGAÇÃO</span><span style="color:#4fd1c5;">62%</span></div>
+          <div style="padding:12px; display:flex; flex-direction:column; gap:12px;">
+            <div style="height:16px; background:repeating-linear-gradient(90deg,#221f4e 0 20px,#161538 20px 24px);"><div style="width:62%; height:16px; background:repeating-linear-gradient(90deg,#4fd1c5 0 20px,#161538 20px 24px);"></div></div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; font-size:16px;">
+              <div style="display:flex; gap:8px;"><span style="color:#4fd1c5;">■</span><span>CENA · 5/7 PONTOS</span></div>
+              <div style="display:flex; gap:8px;"><span style="color:#4fd1c5;">■</span><span>SUSPEITOS · 3/4</span></div>
+              <div style="display:flex; gap:8px;"><span style="color:#4fd1c5;">■</span><span>PISTAS · 6 ACHADAS</span></div>
+              <div style="display:flex; gap:8px;"><span style="color:#ffb43a;">■</span><span>TEORIAS · 4 NO QUADRO</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#0e0d24; border:4px solid #ffb43a; padding:16px; display:flex; gap:16px; align-items:center;">
+          <div style="width:64px; height:64px; flex:none; border:4px solid #07061a; overflow:hidden; position:relative; background:#161538; box-sizing:border-box;"><img src="{{ A.pt.nevoeiro }}" style="position:absolute; left:-36px; top:-32px; width:128px; height:128px;"></div>
+          <div style="flex:1; display:flex; flex-direction:column; gap:4px;">
+            <span style="font-size:16px; color:#ffb43a; letter-spacing:1px;">CONTINUE DE ONDE PARARAM</span>
+            <span style="font-family:'Courier Prime',monospace; font-size:15px; line-height:1.5; color:#ebdfc2;">@nevoeiro pausou o interrogatório de Rui Toledo na pergunta 3, há 2 horas.</span>
+          </div>
+          <div style="font-size:16px; color:#07061a; background:#ffb43a; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #c26f1f, inset 4px 4px 0 #ffdd7e; padding:8px 14px; cursor:pointer;" style-hover="background:#ffdd7e;">CONTINUAR ▸</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <span style="font-size:16px; letter-spacing:2px; color:#9e9fc9;">DETETIVES NO CASO</span>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <sc-for list="{{ team }}" as="p" hint-placeholder-count="5">
+              <div style="display:flex; align-items:center; gap:8px; padding:4px 10px 4px 4px; background:#161538; border:4px solid #221f4e;">
+                <div style="width:40px; height:40px; border:2px solid #07061a; overflow:hidden; position:relative; background:#161538;"><img src="{{ p.img }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;"></div>
+                <div style="display:flex; flex-direction:column;"><span style="font-size:14px; color:{{ p.color }};">@{{ p.name }}</span><span style="font-family:'Courier Prime',monospace; font-size:13px; color:#9e9fc9;">{{ p.role }}</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:24px; letter-spacing:2px; color:#ebdfc2;">SUSPEITOS</span><span style="font-family:'Courier Prime',monospace; font-size:14px; color:#9e9fc9;">Barra = quanto a equipe suspeita (votos no quadro)</span></div>
+      <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+        <sc-for list="{{ suspects }}" as="s" hint-placeholder-count="4">
+          <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:12px; display:flex; flex-direction:column; gap:10px; cursor:pointer;" style-hover="box-shadow:inset 0 0 0 4px #ffb43a, 8px 8px 0 #000;">
+            <div style="display:flex; gap:12px;">
+              <img src="{{ s.img }}" style="width:128px; height:128px; border:4px solid #07061a; flex:none;">
+              <div style="display:flex; flex-direction:column; gap:6px; min-width:0;">
+                <span style="font-size:20px; line-height:1.1; color:#ebdfc2;">{{ s.name }}</span>
+                <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.4; color:#9e9fc9;">{{ s.role }}</span>
+                <span style="align-self:flex-start; font-size:12px; padding:2px 6px; letter-spacing:1px; background:{{ s.tagBg }}; color:#07061a;">{{ s.tag }}</span>
+              </div>
+            </div>
+            <div style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.5; color:#ebdfc2; min-height:42px;"><span style="color:#ffb43a;">Álibi:</span> {{ s.alibi }}</div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="flex:1; height:8px; background:#07061a;"><div style="width:{{ s.sus }}; height:8px; background:#e2433b;"></div></div>
+              <span style="font-size:14px; color:#9e9fc9;">{{ s.sus }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:24px; align-items:flex-start;">
+      <div style="flex:2; min-width:0; display:flex; flex-direction:column; gap:12px;">
+        <span style="font-size:24px; letter-spacing:2px; color:#ebdfc2;">PISTAS COLETADAS</span>
+        <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;">
+          <sc-for list="{{ clues }}" as="c" hint-placeholder-count="6">
+            <div style="display:flex; gap:12px; padding:12px; background:#161538; border:4px solid {{ c.border }};">
+              <div style="width:64px; height:64px; flex:none; display:flex; align-items:center; justify-content:center; background:#302d68; border:4px solid #07061a; box-sizing:border-box;"><img src="{{ c.img }}" style="width:48px; height:48px;"></div>
+              <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
+                <div style="display:flex; gap:8px; align-items:center;"><span style="font-size:18px; color:#ebdfc2;">{{ c.name }}</span><sc-if value="{{ c.imp }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px; padding:2px 6px; background:#e2433b; color:#f6f0e2; letter-spacing:1px;">IMPORTANTE</span></sc-if></div>
+                <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.45; color:#d0bf99;">{{ c.desc }}</span>
+                <span style="font-size:12px; color:#9e9fc9; letter-spacing:1px;">{{ c.by }}</span>
+              </div>
+            </div>
+          </sc-for>
+          <div style="display:flex; gap:12px; padding:12px; background:#0e0d24; border:4px dashed #302d68; grid-column:span 2; align-items:center;">
+            <div style="width:64px; height:64px; flex:none; display:flex; align-items:center; justify-content:center; background:#161538; border:4px solid #221f4e; box-sizing:border-box; font-size:28px; color:#46457f;">?</div>
+            <span style="font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9;">Ainda há pistas escondidas na cena e nos depoimentos.</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:12px;">
+        <span style="font-size:24px; letter-spacing:2px; color:#ebdfc2;">DIÁRIO DO CASO</span>
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:12px 16px; display:flex; flex-direction:column;">
+          <sc-for list="{{ diary }}" as="d" hint-placeholder-count="5">
+            <div style="display:flex; gap:12px;">
+              <div style="display:flex; flex-direction:column; align-items:center; width:12px; flex:none;"><div style="width:12px; height:12px; background:{{ d.color }}; margin-top:6px;"></div><div style="flex:1; width:4px; background:#302d68;"></div></div>
+              <div style="display:flex; flex-direction:column; gap:2px; padding-bottom:16px;">
+                <span style="font-size:12px; color:#9e9fc9; letter-spacing:1px;">{{ d.when }}</span>
+                <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.5; color:#ebdfc2;"><span style="color:{{ d.color }}; font-weight:700;">@{{ d.who }}</span> {{ d.what }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  state = { art: null };
+  componentDidMount() { this._t = setInterval(() => { if (window.PX) { clearInterval(this._t); this.setState({ art: window.PX.get() }); } }, 30); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const A = this.state.art || { icons: {}, pt: {}, mini: {}, ch: {} };
+    const I = A.icons;
+    return {
+      A,
+      team: [
+        { img: A.pt.vega, name: 'vega', color: '#ffb43a', role: 'abriu o caso' },
+        { img: A.pt.ana, name: 'lupa_ana', color: '#4fd1c5', role: '4 conexões' },
+        { img: A.pt.caju, name: 'caju', color: '#9b6b3d', role: '2 pistas' },
+        { img: A.pt.nevoeiro, name: 'nevoeiro', color: '#9e9fc9', role: '1 interrogatório' },
+        { img: A.pt.moreira, name: 'sgt.moreira', color: '#9e9fc9', role: 'observando' }
+      ],
+      suspects: [
+        { img: A.pt.irene, name: 'Irene Brandão', role: 'Sobrinha e única herdeira', tag: 'INTERROGADA', tagBg: '#9e9fc9', alibi: 'Jantava no restaurante do térreo até 22h30.', sus: '45%' },
+        { img: A.pt.caio, name: 'Caio Mendes', role: 'Gerente do hotel', tag: 'INTERROGADO', tagBg: '#9e9fc9', alibi: 'Revisava contas no escritório. Sozinho.', sus: '25%' },
+        { img: A.pt.lucia, name: 'Lúcia Farias', role: 'Camareira do 3º andar', tag: 'INTERROGADA', tagBg: '#9e9fc9', alibi: 'Ouviu uma discussão às 22:40 no corredor.', sus: '10%' },
+        { img: A.pt.rui, name: 'Rui “Faísca” Toledo', role: 'Músico do Bar Neblina', tag: 'EM ANDAMENTO', tagBg: '#4fd1c5', alibi: 'Tocava no bar até 23h. Ninguém confirmou.', sus: '20%' }
+      ],
+      clues: [
+        { img: I.relogio, name: 'Relógio parado', desc: 'Ponteiros travados em 22:17. Vidro intacto.', by: 'POR @VEGA · CENA, PONTO 1', imp: true, border: '#e2433b' },
+        { img: I.carta, name: 'Bilhete rasgado', desc: '“…às dez, no 304. Traga o…”', by: 'POR @LUPA_ANA · GAVETA DA MESA', imp: true, border: '#e2433b' },
+        { img: I.pegada, name: 'Pegadas molhadas', desc: 'Saem da janela e param no meio do quarto.', by: 'POR @VEGA · CENA, PONTO 4', imp: false, border: '#221f4e' },
+        { img: I.chave, name: 'Chave mestra sumiu', desc: 'A chave do 3º andar não está na recepção.', by: 'POR @NEVOEIRO · DEPOIMENTO DE CAIO', imp: false, border: '#221f4e' },
+        { img: I.xicara, name: 'Xícara com resíduo', desc: 'Chá frio com pó branco no fundo. Na perícia.', by: 'POR @CAJU · CENA, PONTO 5', imp: false, border: '#221f4e' },
+        { img: I.recibo, name: 'Recibo de penhor', desc: 'Emitido 3 dias antes, em nome de I. Brandão.', by: 'POR @CAJU · BOLSO DO CASACO', imp: false, border: '#221f4e' }
+      ],
+      diary: [
+        { when: 'HÁ 4 MIN', who: 'lupa_ana', color: '#4fd1c5', what: 'ligou o relógio ao depoimento de Lúcia no quadro.' },
+        { when: 'HÁ 2 H', who: 'nevoeiro', color: '#9e9fc9', what: 'interrogou Rui Toledo e pausou na pergunta 3.' },
+        { when: 'ONTEM', who: 'caju', color: '#9b6b3d', what: 'achou o recibo de penhor no casaco da vítima.' },
+        { when: 'HÁ 2 DIAS', who: 'lupa_ana', color: '#4fd1c5', what: 'encontrou o bilhete rasgado na gaveta.' },
+        { when: 'HÁ 3 DIAS', who: 'vega', color: '#ffb43a', what: 'abriu o caso e examinou a cena do crime.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

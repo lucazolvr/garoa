@@ -1,0 +1,136 @@
+/* GAROA — tokens e componentes base (paleta = window.PX.P em js/pixel.js) */
+:root {
+  --void: #07061a;
+  --ink: #0e0d24;
+  --night: #161538;
+  --deep: #221f4e;
+  --slate: #302d68;
+  --dusk: #46457f;
+  --fog: #9e9fc9;
+  --white: #f6f0e2;
+  --paper: #ebdfc2;
+  --paper2: #d0bf99;
+  --cork: #9b6b3d;
+  --amber: #ffb43a;
+  --amber-l: #ffdd7e;
+  --amber-d: #c26f1f;
+  --red: #e2433b;
+  --teal: #4fd1c5;
+
+  --font-pixel: 'Pixelify Sans', monospace;
+  --font-texto: 'Courier Prime', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--void);
+  overflow: hidden;
+}
+
+a { color: var(--amber); }
+a:hover { color: var(--amber-l); }
+img, canvas { image-rendering: pixelated; }
+
+button, input {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* Palco: a tela é desenhada em 1440×896 e escalada para caber na janela */
+.palco {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tela {
+  width: 1440px;
+  height: 896px;
+  flex: none;
+  transform-origin: center;
+  background: var(--void);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-pixel);
+  color: var(--paper);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 4px solid var(--void);
+  cursor: pointer;
+}
+
+.btn-ambar {
+  color: var(--void);
+  background: var(--amber);
+  box-shadow: inset -4px -4px 0 var(--amber-d), inset 4px 4px 0 var(--amber-l);
+  padding: 6px 14px;
+}
+.btn-ambar:hover { background: var(--amber-l); }
+.btn-ambar:active { box-shadow: inset 4px 4px 0 var(--amber-d); }
+
+.btn-ardosia {
+  color: var(--paper);
+  background: var(--slate);
+  box-shadow: inset -4px -4px 0 var(--deep), inset 4px 4px 0 var(--dusk);
+  padding: 6px 12px;
+  letter-spacing: 0;
+}
+.btn-ardosia:hover { background: var(--dusk); }
+
+/* ---------- Retratos (sprite 32px exibido a 4×, recortado) ---------- */
+.retrato {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+  flex: none;
+}
+.retrato img {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  left: var(--rx, -44px);
+  top: var(--ry, -40px);
+}
+
+/* ---------- Painéis ---------- */
+.painel {
+  background: var(--night);
+  border: 4px solid var(--void);
+  box-shadow: inset 0 0 0 4px var(--slate);
+  padding: 4px;
+}
+.painel-flutuante { box-shadow: inset 0 0 0 4px var(--slate), 8px 8px 0 var(--void); }
+
+.painel-titulo {
+  padding: 8px 12px;
+  background: var(--slate);
+  font-size: 16px;
+  color: var(--amber-l);
+  letter-spacing: 2px;
+}
+
+.selo {
+  font-size: 12px;
+  padding: 2px 6px;
+  letter-spacing: 1px;
+  color: var(--void);
+}
+
+.barra {
+  background: repeating-linear-gradient(90deg, var(--deep) 0 20px, var(--void) 20px 24px);
+}
+.barra > div {
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--cor, var(--teal)) 0 20px, var(--void) 20px 24px);
+}

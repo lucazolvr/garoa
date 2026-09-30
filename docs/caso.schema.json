@@ -1,0 +1,1624 @@
+{
+  "title": "Caso do GAROA",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}$"
+    },
+    "titulo": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "bairro": {
+      "type": "string",
+      "enum": [
+        "CENTRO LUZ",
+        "ALTO DOS VIDROS",
+        "CAIS VELHO",
+        "VILA NEBLINA"
+      ]
+    },
+    "local": {
+      "type": "string",
+      "minLength": 1,
+      "description": "ex.: \"Hotel Alvorada\""
+    },
+    "dificuldade": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "urgente": {
+      "default": false,
+      "type": "boolean"
+    },
+    "mapa": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 976
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 760
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "description": "canto superior esquerdo do marcador no mapa (1024×832)"
+    },
+    "resumo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "1 ou 2 frases para o cartão do mapa"
+    },
+    "relatorio": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "relatório policial, um parágrafo por item"
+    },
+    "acusacao": {
+      "type": "string",
+      "minLength": 1,
+      "description": "pergunta da tela de acusação, ex.: \"Quem parou o relógio?\""
+    },
+    "vitima": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "curto": {
+          "type": "string",
+          "minLength": 1
+        },
+        "aparencia": {
+          "type": "object",
+          "properties": {
+            "pele": {
+              "type": "string",
+              "enum": [
+                "clara",
+                "media",
+                "escura"
+              ]
+            },
+            "cabelo": {
+              "type": "string",
+              "enum": [
+                "curto",
+                "longo",
+                "coque",
+                "careca"
+              ]
+            },
+            "corCabelo": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "casaco": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "camisa": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "gravata": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "chapeu": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "faixaChapeu": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "oculos": {
+              "type": "boolean"
+            },
+            "bigode": {
+              "type": "boolean"
+            },
+            "brinco": {
+              "type": "boolean"
+            },
+            "labios": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            },
+            "sobrancelha": {
+              "type": "string",
+              "enum": [
+                "void",
+                "ink",
+                "night",
+                "deep",
+                "slate",
+                "dusk",
+                "haze",
+                "fog",
+                "white",
+                "paper",
+                "paper2",
+                "paper3",
+                "cork",
+                "cork2",
+                "amber",
+                "amberL",
+                "amberD",
+                "red",
+                "redD",
+                "teal",
+                "moss",
+                "leaf",
+                "skin1",
+                "skin2",
+                "skin3"
+              ]
+            }
+          },
+          "required": [
+            "pele",
+            "cabelo",
+            "corCabelo",
+            "casaco",
+            "camisa"
+          ]
+        }
+      },
+      "required": [
+        "nome",
+        "curto",
+        "aparencia"
+      ]
+    },
+    "cena": {
+      "type": "object",
+      "properties": {
+        "cenario": {
+          "type": "string",
+          "enum": [
+            "quarto-hotel",
+            "sala-cinema"
+          ]
+        },
+        "titulo": {
+          "type": "string",
+          "minLength": 1,
+          "description": "ex.: \"QUARTO 304\""
+        },
+        "contexto": {
+          "type": "string",
+          "minLength": 1,
+          "description": "linha abaixo da cena, ex.: \"Encontrado às 23:40 · chuva forte\""
+        },
+        "pontos": {
+          "minItems": 3,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ancora": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              },
+              "texto": {
+                "type": "string",
+                "minLength": 1,
+                "description": "o que o detetive vê ao examinar"
+              },
+              "pista": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+              }
+            },
+            "required": [
+              "ancora",
+              "texto"
+            ]
+          }
+        }
+      },
+      "required": [
+        "cenario",
+        "titulo",
+        "contexto",
+        "pontos"
+      ]
+    },
+    "suspeitos": {
+      "minItems": 3,
+      "maxItems": 4,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "nome": {
+            "type": "string",
+            "minLength": 1
+          },
+          "curto": {
+            "type": "string",
+            "minLength": 1,
+            "description": "nome curto para a etiqueta do diálogo e o quadro, ex.: \"Rui\""
+          },
+          "papel": {
+            "type": "string",
+            "minLength": 1,
+            "description": "ex.: \"Gerente do hotel\""
+          },
+          "genero": {
+            "type": "string",
+            "enum": [
+              "f",
+              "m"
+            ]
+          },
+          "alibi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "abertura": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "fala inicial, antes da primeira pergunta"
+          },
+          "aparencia": {
+            "type": "object",
+            "properties": {
+              "pele": {
+                "type": "string",
+                "enum": [
+                  "clara",
+                  "media",
+                  "escura"
+                ]
+              },
+              "cabelo": {
+                "type": "string",
+                "enum": [
+                  "curto",
+                  "longo",
+                  "coque",
+                  "careca"
+                ]
+              },
+              "corCabelo": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "casaco": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "camisa": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "gravata": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "chapeu": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "faixaChapeu": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "oculos": {
+                "type": "boolean"
+              },
+              "bigode": {
+                "type": "boolean"
+              },
+              "brinco": {
+                "type": "boolean"
+              },
+              "labios": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              },
+              "sobrancelha": {
+                "type": "string",
+                "enum": [
+                  "void",
+                  "ink",
+                  "night",
+                  "deep",
+                  "slate",
+                  "dusk",
+                  "haze",
+                  "fog",
+                  "white",
+                  "paper",
+                  "paper2",
+                  "paper3",
+                  "cork",
+                  "cork2",
+                  "amber",
+                  "amberL",
+                  "amberD",
+                  "red",
+                  "redD",
+                  "teal",
+                  "moss",
+                  "leaf",
+                  "skin1",
+                  "skin2",
+                  "skin3"
+                ]
+              }
+            },
+            "required": [
+              "pele",
+              "cabelo",
+              "corCabelo",
+              "casaco",
+              "camisa"
+            ]
+          },
+          "perguntas": {
+            "minItems": 3,
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                },
+                "texto": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "o que o detetive pergunta; em perguntas com \"mostra\", o nome da pista já aparece como MOSTRAR <pista>"
+                },
+                "resposta": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "description": "uma frase por item: cada frase pode ser marcada como trecho"
+                },
+                "requer": {
+                  "default": [],
+                  "description": "pistas necessárias para a pergunta aparecer liberada",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  }
+                },
+                "mostra": {
+                  "description": "pista mostrada ao suspeito; conta como exigida",
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                },
+                "revela": {
+                  "default": [],
+                  "description": "pistas que a resposta revela",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  }
+                },
+                "tensao": {
+                  "type": "string",
+                  "enum": [
+                    "baixa",
+                    "media",
+                    "alta"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "texto",
+                "resposta",
+                "tensao"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "nome",
+          "curto",
+          "papel",
+          "genero",
+          "alibi",
+          "abertura",
+          "aparencia",
+          "perguntas"
+        ]
+      }
+    },
+    "pistas": {
+      "minItems": 4,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "nome": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 28
+          },
+          "descricao": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icone": {
+            "type": "string",
+            "enum": [
+              "lupa",
+              "digital",
+              "pegada",
+              "chave",
+              "carta",
+              "relogio",
+              "xicara",
+              "recibo",
+              "distintivo",
+              "alerta",
+              "filme",
+              "fusivel",
+              "ingresso"
+            ]
+          },
+          "importante": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "nome",
+          "descricao",
+          "icone"
+        ]
+      }
+    },
+    "motivos": {
+      "minItems": 3,
+      "maxItems": 6,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "texto": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          }
+        },
+        "required": [
+          "id",
+          "texto"
+        ]
+      }
+    },
+    "solucao": {
+      "type": "object",
+      "properties": {
+        "culpado": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "motivo": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "evidencias": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "description": "pistas aceitas como evidência principal"
+        },
+        "relatorio": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "relatório final, um parágrafo por item"
+        }
+      },
+      "required": [
+        "culpado",
+        "motivo",
+        "evidencias",
+        "relatorio"
+      ]
+    },
+    "coopSimulado": {
+      "default": {
+        "eventos": []
+      },
+      "description": "o que os detetives simulados já fizeram no caso (substituído por jogadores reais no marco 2)",
+      "type": "object",
+      "properties": {
+        "abertoPor": {
+          "type": "string",
+          "enum": [
+            "lupa_ana",
+            "caju",
+            "nevoeiro",
+            "sgt.moreira"
+          ]
+        },
+        "eventos": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "examinou"
+                  },
+                  "ancora": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "ancora"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "perguntou"
+                  },
+                  "suspeito": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "pergunta": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "suspeito",
+                  "pergunta"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "marcou-trecho"
+                  },
+                  "suspeito": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "pergunta": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "trecho": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "índice da frase em resposta"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "suspeito",
+                  "pergunta",
+                  "trecho"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "pausou"
+                  },
+                  "suspeito": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "suspeito"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "nota"
+                  },
+                  "nota": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "texto": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 280
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 968,
+                    "description": "px no quadro (1008×800)"
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 760,
+                    "description": "px no quadro (1008×800)"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "nota",
+                  "texto",
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "pista-no-quadro"
+                  },
+                  "pista": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 968,
+                    "description": "px no quadro (1008×800)"
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 760,
+                    "description": "px no quadro (1008×800)"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "pista",
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "foto-cena"
+                  },
+                  "ancora": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "legenda": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 40
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 968,
+                    "description": "px no quadro (1008×800)"
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 760,
+                    "description": "px no quadro (1008×800)"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "ancora",
+                  "legenda",
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "recorte"
+                  },
+                  "recorte": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "fonte": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "titulo": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "texto": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 968,
+                    "description": "px no quadro (1008×800)"
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 760,
+                    "description": "px no quadro (1008×800)"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "recorte",
+                  "fonte",
+                  "titulo",
+                  "texto",
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "item-movido"
+                  },
+                  "item": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 968,
+                    "description": "px no quadro (1008×800)"
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 760,
+                    "description": "px no quadro (1008×800)"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "item",
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "item-removido"
+                  },
+                  "item": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "item"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "fio"
+                  },
+                  "de": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  },
+                  "para": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "de",
+                  "para"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "fio-removido"
+                  },
+                  "de": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  },
+                  "para": {
+                    "type": "string",
+                    "pattern": "^(vitima|(suspeito|pista|nota|cena|recorte):[a-z0-9]+(-[a-z0-9]+)*)$"
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "de",
+                  "para"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "teoria"
+                  },
+                  "teoria": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "titulo": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 60
+                  },
+                  "texto": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 280
+                  },
+                  "suspeito": {
+                    "description": "suspeito que a teoria aponta, se houver",
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "votosBase": {
+                    "default": 0,
+                    "description": "votos de outros detetives fora da simulação",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "teoria",
+                  "titulo",
+                  "texto"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "autor": {
+                    "type": "string",
+                    "enum": [
+                      "lupa_ana",
+                      "caju",
+                      "nevoeiro",
+                      "sgt.moreira"
+                    ]
+                  },
+                  "minutosAtras": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991,
+                    "description": "há quantos minutos, contados a partir da primeira visita do jogador"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "const": "voto"
+                  },
+                  "teoria": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  },
+                  "valor": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "const": -1
+                      },
+                      {
+                        "type": "number",
+                        "const": 0
+                      },
+                      {
+                        "type": "number",
+                        "const": 1
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "autor",
+                  "minutosAtras",
+                  "tipo",
+                  "teoria",
+                  "valor"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "titulo",
+    "bairro",
+    "local",
+    "dificuldade",
+    "mapa",
+    "resumo",
+    "relatorio",
+    "acusacao",
+    "vitima",
+    "cena",
+    "suspeitos",
+    "pistas",
+    "motivos",
+    "solucao"
+  ]
+}

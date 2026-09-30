@@ -1,0 +1,121 @@
+/* GAROA — tokens e peças do guia de estilo v2 ("Noite, chuva e papel").
+   1 pixel de arte = 4px. Sombras duras de 8px. Pixelify Sans na interface, Courier Prime no texto longo. */
+:root {
+  --void: #07061a; --ink: #0e0d24; --night: #161538; --deep: #221f4e;
+  --slate: #302d68; --dusk: #46457f; --haze: #6c6ba6; --fog: #9e9fc9;
+  --white: #f6f0e2; --paper: #ebdfc2; --paper2: #d0bf99; --paper3: #9e8a66;
+  --cork: #9b6b3d; --cork2: #6a4628;
+  --amber: #ffb43a; --amber-l: #ffdd7e; --amber-d: #c26f1f;
+  --red: #e2433b; --red-d: #8c1e2d; --teal: #4fd1c5; --moss: #284a47; --leaf: #3b6e4f;
+  --pixel: 'Pixelify Sans', monospace;
+  --texto: 'Courier Prime', monospace;
+}
+
+* { box-sizing: border-box; }
+html, body, #raiz { margin: 0; min-height: 100%; background: var(--void); }
+body { color: var(--paper); font-family: var(--pixel); }
+a { color: var(--amber); }
+a:hover { color: var(--amber-l); }
+img, canvas { image-rendering: pixelated; }
+button, input, textarea, select { font: inherit; color: inherit; margin: 0; }
+button { cursor: pointer; }
+h1, h2, h3, p { margin: 0; font-weight: inherit; }
+ul { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 4px solid var(--amber-l); outline-offset: 2px; }
+.texto { font-family: var(--texto); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Palco: telas desenhadas a 1440px de largura ---------- */
+.palco-caber { position: fixed; inset: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.palco-largura { overflow-x: hidden; }
+.tela { width: 1440px; background: var(--void); display: flex; flex-direction: column; overflow: hidden; flex: none; }
+
+/* ---------- Botões (bisel de 4px; hover sobe 2px; pressionado desce 4px) ---------- */
+.btn {
+  --bg: var(--slate); --fg: var(--paper); --hi: var(--dusk); --lo: var(--deep); --hov: var(--dusk);
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--pixel); font-size: 16px; letter-spacing: 1px; white-space: nowrap;
+  color: var(--fg); background: var(--bg);
+  border: 4px solid var(--void);
+  box-shadow: inset -4px -4px 0 var(--lo), inset 4px 4px 0 var(--hi);
+  padding: 6px 14px;
+  transition: transform 60ms steps(1);
+}
+.btn:hover:not(:disabled) { background: var(--hov); box-shadow: inset -4px -4px 0 var(--bg), inset 4px 4px 0 var(--white); transform: translateY(-2px); }
+.btn:active:not(:disabled) { background: var(--lo); box-shadow: inset 4px 4px 0 var(--lo); transform: translateY(4px); }
+.btn:disabled { --fg: var(--haze); background: var(--night); box-shadow: inset -4px -4px 0 var(--ink); cursor: not-allowed; }
+.btn-primario { --bg: var(--amber); --fg: var(--void); --hi: var(--amber-l); --lo: var(--amber-d); --hov: var(--amber-l); }
+.btn-alerta { --bg: var(--red); --fg: var(--white); --hi: #ff7a6e; --lo: var(--red-d); --hov: #f0574e; }
+.btn-grande { font-size: 20px; letter-spacing: 2px; padding: 14px 20px; }
+.btn-pequeno { font-size: 14px; padding: 6px 10px; }
+.btn-largo { width: 100%; }
+
+/* ---------- Superfícies ---------- */
+.painel { background: var(--night); border: 4px solid var(--void); box-shadow: inset 0 0 0 4px var(--slate); padding: 4px; }
+.painel-sombra { box-shadow: inset 0 0 0 4px var(--slate), 8px 8px 0 #000; }
+.painel-titulo {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 8px 12px; background: var(--slate); font-size: 16px; letter-spacing: 2px; color: var(--amber-l);
+}
+.painel-titulo small { color: var(--fog); font-size: 14px; }
+.papel { background: var(--paper); color: var(--deep); border: 4px solid var(--void); box-shadow: 8px 8px 0 #000; }
+
+.selo { display: inline-block; font-size: 12px; padding: 2px 6px; letter-spacing: 1px; color: var(--void); white-space: nowrap; }
+.selo-m { font-size: 14px; padding: 2px 8px; }
+
+.barra { --seg: 20px; --vao: 4px; --cor: var(--teal); --fundo: var(--void); height: 12px;
+  background: repeating-linear-gradient(90deg, var(--deep) 0 var(--seg), var(--fundo) var(--seg) calc(var(--seg) + var(--vao))); }
+.barra > div { height: 100%; background: repeating-linear-gradient(90deg, var(--cor) 0 var(--seg), var(--fundo) var(--seg) calc(var(--seg) + var(--vao))); }
+
+.rosto { position: relative; overflow: hidden; background: var(--night); flex: none; box-sizing: content-box; }
+.rosto img { position: absolute; width: 128px; height: 128px; }
+
+.icone-quadro { display: flex; align-items: center; justify-content: center; flex: none; background: var(--slate); border: 4px solid var(--void); }
+
+/* ---------- Campos ---------- */
+.campo {
+  display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px;
+  background: var(--void); border: 4px solid var(--slate);
+  font-family: var(--texto); font-size: 15px; color: var(--paper);
+}
+.campo:hover { border-color: var(--haze); }
+.campo:focus-within { border-color: var(--amber); box-shadow: 4px 4px 0 var(--amber-d); }
+.campo input, .campo textarea, .campo select { flex: 1; min-width: 0; background: none; border: 0; outline: 0; font-family: var(--texto); font-size: 15px; color: var(--paper); }
+.campo textarea { padding: 10px 0; resize: none; line-height: 1.5; }
+.campo select option { background: var(--night); }
+.campo ::placeholder { color: var(--fog); opacity: 1; }
+.rotulo { font-size: 14px; letter-spacing: 2px; color: var(--fog); }
+
+/* ---------- Janela (modal) ---------- */
+.janela-fundo { position: fixed; inset: 0; z-index: 50; background: #07061acc; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.janela { width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; }
+.janela .painel-titulo button { background: none; border: 0; color: var(--amber-l); font-size: 16px; padding: 0 4px; }
+.janela-corpo { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.janela-acoes { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* ---------- Avisos (toast) ---------- */
+.avisos { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 60; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; }
+.aviso { padding: 10px 16px; background: var(--void); border: 4px solid var(--amber); box-shadow: 8px 8px 0 #000; font-size: 16px; letter-spacing: 1px; color: var(--amber-l); max-width: 560px; text-align: center; }
+.aviso-erro { border-color: var(--red); color: var(--paper); }
+.aviso-texto { font-family: var(--texto); font-size: 15px; letter-spacing: 0; }
+
+/* ---------- Topo ---------- */
+.topo { height: 64px; flex: none; display: flex; align-items: center; gap: 24px; padding: 0 20px; background: var(--ink); border-bottom: 4px solid var(--slate); }
+.topo-compacto { gap: 16px; }
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca img { width: 40px; height: 40px; }
+.marca-nome { font-size: 28px; font-weight: 700; color: var(--amber); letter-spacing: 3px; line-height: 1; }
+.marca-sub { display: block; font-size: 12px; color: var(--fog); letter-spacing: 2px; line-height: 1; margin-top: 2px; }
+.trilha { font-size: 16px; color: var(--fog); letter-spacing: 1px; display: flex; gap: 8px; }
+.trilha a { color: var(--fog); text-decoration: none; }
+.trilha a:hover { color: var(--paper); }
+.abas { display: flex; gap: 4px; margin-left: 16px; }
+.aba { padding: 8px 14px; font-size: 16px; color: var(--fog); background: none; border: 0; text-decoration: none; }
+.aba:hover { color: var(--paper); background: var(--night); }
+.aba[aria-current='page'] { background: var(--slate); color: var(--amber-l); box-shadow: inset 0 -4px 0 var(--amber); }
+.topo-direita { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.topo-eu { display: block; border: 4px solid var(--amber); }
+.topo-eu:hover { border-color: var(--amber-l); }
+.caixa-cartas { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--night); border: 4px solid var(--slate); padding: 0; }
+.caixa-cartas img { width: 24px; height: 24px; }
+label:has(> input.sr:focus-visible) > .rosto { outline: 4px solid var(--amber-l); outline-offset: 2px; }

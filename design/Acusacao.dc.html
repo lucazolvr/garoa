@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="pixel.js"></script>
+<style>body{margin:0;background:#07061a;} a{color:#ffb43a;} a:hover{color:#ffdd7e;} img{image-rendering:pixelated;}</style>
+</helmet>
+<div data-screen-label="05 Acusação" style="width:1440px; height:900px; background:#07061a; font-family:'Pixelify Sans',monospace; color:#ebdfc2; display:flex; flex-direction:column; overflow:hidden;">
+  <div style="height:64px; flex:none; display:flex; align-items:center; gap:16px; padding:0 20px; background:#0e0d24; border-bottom:4px solid #302d68; box-sizing:border-box;">
+    <img src="{{ A.icons.lupa }}" style="width:40px; height:40px;">
+    <span style="font-size:28px; font-weight:700; color:#ffb43a; letter-spacing:3px;">GAROA</span>
+    <span style="font-size:16px; color:#9e9fc9; letter-spacing:1px;">▸ CASO #0412 ▸ {{ crumb }}</span>
+    <div style="margin-left:auto; width:48px; height:48px; border:4px solid #ffb43a; background:#161538; overflow:hidden; position:relative; box-sizing:border-box;"><img src="{{ A.pt.vega }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;"></div>
+  </div>
+
+  <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+    <div style="flex:1; display:flex; flex-direction:column; gap:20px; padding:24px 32px; min-height:0;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between;">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span style="font-size:16px; color:#e2433b; letter-spacing:2px;">ACUSAÇÃO FORMAL</span>
+          <span style="font-size:40px; font-weight:700; line-height:1;">Quem parou o relógio?</span>
+        </div>
+        <span style="font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9; max-width:420px; text-align:right; line-height:1.5;">Sua acusação fica selada. Ninguém da equipe vê sua resposta até o caso ser resolvido.</span>
+      </div>
+      <div style="flex:1; display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:20px; min-height:0;">
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:4px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:10px; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span style="background:#ffb43a; color:#07061a; padding:0 6px;">1</span>CULPADO</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:12px;">
+            <sc-for list="{{ suspects }}" as="s" hint-placeholder-count="4">
+              <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 8px; background:{{ s.bg }}; border:4px solid {{ s.border }}; cursor:pointer;" style-hover="border-color:#ffdd7e;">
+                <img src="{{ s.img }}" style="width:128px; height:128px; border:4px solid #07061a;">
+                <span style="font-size:16px; color:{{ s.fg }}; text-align:center;">{{ s.name }}</span>
+                <sc-if value="{{ s.sel }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; top:-4px; right:-4px; padding:2px 6px; background:#ffb43a; color:#07061a; font-size:12px; border:2px solid #07061a;">✓ ESCOLHIDA</span></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:4px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:10px; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span style="background:#ffb43a; color:#07061a; padding:0 6px;">2</span>MOTIVO</div>
+          <div style="display:flex; flex-direction:column; gap:8px; padding:12px;">
+            <sc-for list="{{ motives }}" as="m" hint-placeholder-count="5">
+              <div style="display:flex; gap:12px; align-items:center; padding:12px; background:{{ m.bg }}; border:4px solid {{ m.border }}; cursor:pointer;" style-hover="border-color:#ffdd7e;">
+                <div style="width:20px; height:20px; flex:none; background:#07061a; border:4px solid {{ m.border2 }}; box-sizing:border-box; display:flex; align-items:center; justify-content:center;"><div style="width:4px; height:4px; background:{{ m.dot }};"></div></div>
+                <span style="font-family:'Courier Prime',monospace; font-size:16px; color:{{ m.fg }};">{{ m.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:4px; display:flex; flex-direction:column;">
+          <div style="display:flex; gap:10px; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span style="background:#ffb43a; color:#07061a; padding:0 6px;">3</span>EVIDÊNCIA PRINCIPAL</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px;">
+            <sc-for list="{{ evid }}" as="e" hint-placeholder-count="6">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 6px; background:{{ e.bg }}; border:4px solid {{ e.border }}; cursor:pointer;" style-hover="border-color:#ffdd7e;">
+                <img src="{{ e.img }}" style="width:48px; height:48px;">
+                <span style="font-size:14px; text-align:center; color:{{ e.fg }};">{{ e.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:stretch;">
+        <div style="flex:1; background:#ebdfc2; color:#221f4e; border:4px solid #07061a; box-shadow:8px 8px 0 #000; padding:16px 20px; display:flex; flex-direction:column; gap:6px;">
+          <span style="font-size:14px; letter-spacing:2px; color:#8c1e2d;">SUA ACUSAÇÃO</span>
+          <span style="font-family:'Courier Prime',monospace; font-size:18px; line-height:1.55;">Acuso <b>IRENE BRANDÃO</b> pela morte de Otávio Brandão, motivada por <b>herança e dívidas</b>. A prova principal é o <b>relógio parado</b>.</span>
+        </div>
+        <div style="width:340px; flex:none; display:flex; flex-direction:column; gap:10px; justify-content:center;">
+          <div style="display:flex; gap:8px; align-items:center; font-size:14px; letter-spacing:1px;"><img src="{{ A.icons.alerta }}" style="width:24px; height:24px;"><span style="color:#e2433b;">2 DE 3 TENTATIVAS RESTANTES</span></div>
+          <div style="text-align:center; font-size:20px; letter-spacing:2px; color:#f6f0e2; background:#e2433b; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #8c1e2d, 8px 8px 0 #000; padding:14px 0; cursor:pointer;" style-hover="outline:4px solid #ffdd7e;" style-active="box-shadow:inset 4px 4px 0 #8c1e2d;">ENVIAR SOLUÇÃO</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSolved }}" hint-placeholder-val="{{ false }}">
+    <div style="flex:1; display:flex; gap:24px; padding:32px; min-height:0;">
+      <div style="position:relative; flex:1; min-width:0; display:flex; flex-direction:column;">
+        <div style="align-self:flex-start; margin-left:24px; padding:8px 20px; background:#9e8a66; border:4px solid #07061a; border-bottom:none; font-size:16px; letter-spacing:2px; color:#07061a;">ARQUIVO · #0412</div>
+        <div style="flex:1; display:flex; gap:28px; padding:28px; background:#ebdfc2; border:4px solid #07061a; box-shadow:inset 0 0 0 8px #d0bf99, 8px 8px 0 #000; color:#221f4e;">
+          <div style="display:flex; flex-direction:column; gap:10px; flex:none;">
+            <img src="{{ A.pt64.irene }}" style="width:256px; height:256px; border:4px solid #07061a;">
+            <span style="align-self:flex-start; padding:4px 10px; background:#8c1e2d; color:#f6f0e2; font-size:16px; letter-spacing:2px;">CULPADA</span>
+            <span style="font-size:24px; color:#07061a;">Irene Brandão</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px; min-width:0;">
+            <span style="font-size:16px; letter-spacing:2px; color:#8c1e2d;">RELATÓRIO FINAL</span>
+            <span style="font-size:36px; font-weight:700; line-height:1.05; color:#07061a;">O Relógio Parado</span>
+            <p style="margin:0; font-family:'Courier Prime',monospace; font-size:16px; line-height:1.65; text-wrap:pretty;">Irene visitou o tio às 22h40, depois do jantar. Após a discussão, parou os ponteiros em 22:17 para parecer que o crime aconteceu enquanto ela ainda estava no restaurante.</p>
+            <p style="margin:0; font-family:'Courier Prime',monospace; font-size:16px; line-height:1.65; text-wrap:pretty;">O recibo de penhor mostrou a dívida. O depoimento de Lúcia derrubou o horário. As pegadas na janela eram de Rui, que subiu pela escada de incêndio para cobrar um empréstimo e fugiu ao ver o corpo.</p>
+          </div>
+        </div>
+        <div style="position:absolute; right:48px; bottom:48px; padding:8px; border:8px solid #e2433b; display:flex; flex-direction:column; align-items:center; background:transparent;">
+          <div style="position:relative; padding:8px 20px; border:4px solid #e2433b; display:flex; flex-direction:column; align-items:center; gap:2px;">
+            <span style="font-size:20px; letter-spacing:6px; color:#e2433b; font-weight:700;">CASO</span>
+            <span style="font-size:48px; letter-spacing:4px; color:#e2433b; font-weight:700; line-height:1;">RESOLVIDO</span>
+            <span style="font-size:14px; letter-spacing:3px; color:#e2433b;">30 · SET · 2026</span>
+            <img src="{{ A.wear }}" style="position:absolute; inset:-12px; width:calc(100% + 24px); height:calc(100% + 24px); opacity:.9;">
+          </div>
+        </div>
+      </div>
+      <div style="width:420px; flex:none; display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+          <div style="padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;">CRÉDITOS DA INVESTIGAÇÃO</div>
+          <div style="display:flex; flex-direction:column; padding:4px 10px;">
+            <sc-for list="{{ credits }}" as="c" hint-placeholder-count="5">
+              <div style="display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:4px solid #0e0d24;">
+                <div style="width:40px; height:40px; flex:none; border:2px solid #07061a; overflow:hidden; position:relative; background:#161538;"><img src="{{ c.img }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;"></div>
+                <div style="flex:1; display:flex; flex-direction:column; gap:2px; min-width:0;"><span style="font-size:14px; color:{{ c.color }};">@{{ c.who }}</span><span style="font-family:'Courier Prime',monospace; font-size:13px; line-height:1.35; color:#d0bf99;">{{ c.what }}</span></div>
+                <span style="font-size:14px; color:#4fd1c5;">{{ c.rep }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; padding:12px; background:#0e0d24; border:4px solid #ffb43a;">
+          <div style="width:64px; height:64px; flex:none; display:flex; align-items:center; justify-content:center; background:#302d68; border:4px solid #07061a; box-sizing:border-box;"><img src="{{ A.icons.relogio }}" style="width:48px; height:48px;"></div>
+          <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-size:12px; letter-spacing:2px; color:#ffb43a;">CONQUISTA DESBLOQUEADA</span><span style="font-size:20px;">Mestre do Tempo</span><span style="font-family:'Courier Prime',monospace; font-size:13px; color:#9e9fc9;">Derrube um álibi pelo horário.</span></div>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:auto;">
+          <div style="flex:1; text-align:center; font-size:16px; color:#ebdfc2; background:#302d68; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #221f4e, inset 4px 4px 0 #46457f; padding:10px 0; cursor:pointer;" style-hover="background:#46457f;">VER ARQUIVO</div>
+          <div style="flex:1; text-align:center; font-size:16px; color:#07061a; background:#ffb43a; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #c26f1f, inset 4px 4px 0 #ffdd7e; padding:10px 0; cursor:pointer;" style-hover="background:#ffdd7e;">PRÓXIMO CASO ▸</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;estado&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;acusar&quot;,&quot;resolvido&quot;],&quot;default&quot;:&quot;acusar&quot;,&quot;tsType&quot;:&quot;'acusar'|'resolvido'&quot;}}">
+class Component extends DCLogic {
+  state = { art: null };
+  componentDidMount() { this._t = setInterval(() => { if (window.PX) { clearInterval(this._t); this.setState({ art: window.PX.get() }); } }, 30); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const A = this.state.art || { icons: {}, pt: {}, pt64: {} };
+    const I = A.icons;
+    const solved = (this.props.estado ?? 'acusar') === 'resolvido';
+    const on = (sel) => sel ? { bg: '#302d68', border: '#ffb43a', fg: '#ffdd7e' } : { bg: '#0e0d24', border: '#221f4e', fg: '#ebdfc2' };
+    return {
+      A, isForm: !solved, isSolved: solved, crumb: solved ? 'RESOLVIDO' : 'ACUSAÇÃO',
+      suspects: [['irene', 'Irene Brandão', 1], ['caio', 'Caio Mendes'], ['lucia', 'Lúcia Farias'], ['rui', 'Rui Toledo']].map(([k, n, s]) => ({ img: A.pt[k], name: n, sel: !!s, ...on(s) })),
+      motives: [['Herança e dívidas', 1], ['Ciúmes'], ['Vingança antiga'], ['Encobrir um roubo'], ['Acidente encoberto']].map(([l, s]) => ({ label: l, ...on(s), border2: s ? '#ffb43a' : '#46457f', dot: s ? '#ffb43a' : '#07061a' })),
+      evid: [['relogio', 'Relógio parado', 1], ['carta', 'Bilhete rasgado'], ['pegada', 'Pegadas'], ['chave', 'Chave mestra'], ['xicara', 'Xícara'], ['recibo', 'Recibo de penhor']].map(([k, n, s]) => ({ img: I[k], name: n, ...on(s) })),
+      credits: [
+        { img: A.pt.vega, who: 'vega', color: '#ffb43a', what: 'Acusação final e exame da cena', rep: '+340' },
+        { img: A.pt.ana, who: 'lupa_ana', color: '#4fd1c5', what: 'Conexão decisiva: relógio × depoimento', rep: '+220' },
+        { img: A.pt.caju, who: 'caju', color: '#9b6b3d', what: 'Achou o recibo de penhor', rep: '+120' },
+        { img: A.pt.nevoeiro, who: 'nevoeiro', color: '#9e9fc9', what: 'Interrogou Rui primeiro', rep: '+80' },
+        { img: A.pt.moreira, who: 'sgt.moreira', color: '#9e9fc9', what: 'Votou na teoria certa', rep: '+20' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

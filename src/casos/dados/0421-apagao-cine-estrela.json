@@ -1,0 +1,109 @@
+{
+  "id": "0421",
+  "titulo": "Apagão no Cine Estrela",
+  "bairro": "VILA NEBLINA",
+  "local": "Cine Estrela",
+  "dificuldade": 2,
+  "mapa": { "x": 8, "y": 200 },
+  "resumo": "Na estreia de sábado, a luz do Cine Estrela caiu por dez minutos. Quando voltou, a féria da noite tinha sumido.",
+  "relatorio": [
+    "Às 21:40 de sábado, durante a estreia de “Neblina Sobre o Cais”, o Cine Estrela ficou dez minutos sem luz. A bilheteira Nair Coutinho deixou a caixa com a féria da noite no balcão para acalmar o público com uma lanterna.",
+    "Quando a luz voltou, a caixa havia sumido. A dona, Aurora Salgado, calcula o prejuízo em três meses de aluguel. Ninguém se feriu."
+  ],
+  "acusacao": "Quem apagou as luzes?",
+  "vitima": {
+    "nome": "Aurora Salgado",
+    "curto": "Aurora",
+    "aparencia": { "pele": "clara", "cabelo": "coque", "corCabelo": "paper2", "casaco": "deep", "camisa": "white", "labios": "red", "oculos": true }
+  },
+  "cena": {
+    "cenario": "sala-cinema",
+    "titulo": "SALA 1",
+    "contexto": "Apagão às 21:40 · chuva desde as 21h · 180 pessoas na sala",
+    "pontos": [
+      { "ancora": "quadro-forca", "texto": "O quadro de força está aberto. O fusível principal não queimou: está inteiro, escondido atrás da tampa.", "pista": "fusivel-removido" },
+      { "ancora": "escada", "texto": "A escada do palco tem barro fresco nos degraus de cima.", "pista": "escada-barro" },
+      { "ancora": "saida", "texto": "Na barra da porta de saída, uma digital de graxa preta ainda fresca.", "pista": "digital-graxa" },
+      { "ancora": "corredor", "texto": "Uma lata de filme vazia caída no corredor, marcada ROLO 3.", "pista": "rolo-vazio" },
+      { "ancora": "poltrona", "texto": "Na poltrona F7, um ingresso de cortesia rasgado ao meio.", "pista": "ingresso-cortesia" },
+      { "ancora": "tela", "texto": "A tela está intacta. A poeira do palco não tem marcas: ninguém subiu pela frente." }
+    ]
+  },
+  "suspeitos": [
+    {
+      "id": "tito",
+      "nome": "Tito Valença",
+      "curto": "Tito",
+      "papel": "Projecionista",
+      "genero": "m",
+      "alibi": "Trocava o rolo 3 na cabine quando a luz caiu.",
+      "abertura": ["Vinte anos de cabine e nunca perdi uma sessão.", "Até sábado."],
+      "aparencia": { "pele": "media", "cabelo": "curto", "corCabelo": "cork2", "casaco": "moss", "camisa": "paper2", "oculos": true },
+      "perguntas": [
+        { "id": "apagao", "texto": "Onde você estava no apagão?", "resposta": ["Na cabine, trocando o rolo 3.", "Quando apagou, a lata me escapou da mão e rolou escada abaixo."], "tensao": "baixa" },
+        { "id": "lata", "texto": "Por que esta lata está vazia?", "mostra": "rolo-vazio", "resposta": ["Porque o filme ficou no projetor, ué.", "A lata caiu, só isso. Pode conferir."], "tensao": "media" },
+        { "id": "quadro-forca", "texto": "Quem mexe no quadro de força?", "resposta": ["Só o Beto. Ele não deixa ninguém chegar perto.", "Naquela noite estava sem luvas, com as mãos pretas de graxa."], "revela": ["maos-graxa"], "tensao": "media" },
+        { "id": "dinheiro-beto", "texto": "O Beto tem problemas de dinheiro?", "requer": ["maos-graxa"], "resposta": ["Deve até as calças no carteado do Cais Velho.", "Todo mundo sabe."], "revela": ["dividas-beto"], "tensao": "baixa" }
+      ]
+    },
+    {
+      "id": "nair",
+      "nome": "Nair Coutinho",
+      "curto": "Nair",
+      "papel": "Bilheteira",
+      "genero": "f",
+      "alibi": "Acalmava o público com uma lanterna. A caixa ficou no balcão.",
+      "abertura": ["Eu sei o que parece.", "Mas eu nunca tirei um tostão daquela caixa."],
+      "aparencia": { "pele": "escura", "cabelo": "longo", "corCabelo": "void", "casaco": "red", "camisa": "paper", "brinco": true, "labios": "redD" },
+      "perguntas": [
+        { "id": "apagao", "texto": "O que aconteceu quando a luz caiu?", "resposta": ["Olhei o relógio da bilheteria: 21:40 em ponto.", "Peguei a lanterna e fui acalmar o público.", "Deixei a caixa no balcão. Que burrice a minha."], "revela": ["horario-apagao"], "tensao": "media" },
+        { "id": "quem-sabia", "texto": "Quem sabia onde ficava a caixa?", "resposta": ["Todo funcionário sabe.", "O Tito, o Beto, a Dona Aurora…"], "tensao": "baixa" },
+        { "id": "cortesia", "texto": "De quem é esta cortesia?", "mostra": "ingresso-cortesia", "resposta": ["Cortesia é só para funcionário.", "Dei essa ao Beto às 21:35. Ele queria ver o começo da estreia."], "revela": ["cortesia-beto"], "tensao": "media" },
+        { "id": "adiantamento", "texto": "O Beto pediu dinheiro a você?", "requer": ["dividas-beto"], "resposta": ["Duas vezes este mês. Adiantamento.", "A Dona Aurora negou as duas."], "tensao": "media" }
+      ]
+    },
+    {
+      "id": "beto",
+      "nome": "Beto Quintela",
+      "curto": "Beto",
+      "papel": "Eletricista do cinema",
+      "genero": "m",
+      "alibi": "Diz que estava no bar da esquina e voltou depois do apagão.",
+      "abertura": ["Eu nem estava aqui quando a luz caiu.", "Pergunta pro pessoal do bar."],
+      "aparencia": { "pele": "clara", "cabelo": "curto", "corCabelo": "amberD", "chapeu": "cork2", "faixaChapeu": "void", "casaco": "cork", "camisa": "paper3", "bigode": true },
+      "perguntas": [
+        { "id": "onde-estava", "texto": "Onde você estava às 21:40?", "resposta": ["No bar da esquina, tomando uma.", "Voltei correndo quando vi a rua escura."], "tensao": "baixa" },
+        { "id": "fusivel", "texto": "O fusível não queimou. Foi tirado.", "mostra": "fusivel-removido", "resposta": ["Fusível velho às vezes solta sozinho.", "Acontece mais do que você imagina."], "tensao": "media" },
+        { "id": "graxa", "texto": "Tem graxa sua na porta de saída.", "mostra": "digital-graxa", "resposta": ["Essa porta eu uso todo dia.", "Tem graxa minha no prédio inteiro."], "tensao": "media" },
+        { "id": "cortesia", "texto": "Nair lhe deu uma cortesia às 21:35.", "mostra": "cortesia-beto", "resposta": ["Está bem… eu entrei para ver o começo.", "Depois saí de novo para o bar. Não vi nada."], "tensao": "alta" }
+      ]
+    }
+  ],
+  "pistas": [
+    { "id": "fusivel-removido", "nome": "Fusível tirado à mão", "descricao": "O fusível principal está inteiro: alguém o tirou do quadro e escondeu atrás da tampa.", "icone": "fusivel", "importante": true },
+    { "id": "escada-barro", "nome": "Barro na escada", "descricao": "Degraus de cima sujos de barro fresco. Chove desde as 21h.", "icone": "pegada" },
+    { "id": "digital-graxa", "nome": "Graxa na porta", "descricao": "Digital de graxa preta na barra da porta de saída lateral.", "icone": "digital" },
+    { "id": "rolo-vazio", "nome": "Lata do rolo 3", "descricao": "Lata de filme vazia no corredor. O rolo 3 continua no projetor.", "icone": "filme" },
+    { "id": "ingresso-cortesia", "nome": "Cortesia da F7", "descricao": "Ingresso de cortesia rasgado, carimbado às 21:35.", "icone": "ingresso", "importante": true },
+    { "id": "horario-apagao", "nome": "Apagão às 21:40", "descricao": "Nair viu o relógio da bilheteria marcar 21:40 quando a luz caiu.", "icone": "relogio" },
+    { "id": "cortesia-beto", "nome": "Cortesia de Beto", "descricao": "Nair entregou a cortesia da F7 a Beto às 21:35, cinco minutos antes do apagão.", "icone": "alerta", "importante": true },
+    { "id": "maos-graxa", "nome": "Mãos de graxa", "descricao": "Tito viu Beto sem luvas naquela noite, com as mãos pretas de graxa.", "icone": "alerta" },
+    { "id": "dividas-beto", "nome": "Dívidas de Beto", "descricao": "Beto deve no carteado do Cais Velho e pediu adiantamento duas vezes.", "icone": "recibo" }
+  ],
+  "motivos": [
+    { "id": "divida-jogo", "texto": "Dívida de jogo" },
+    { "id": "vinganca", "texto": "Vingança contra a dona" },
+    { "id": "ciumes", "texto": "Ciúmes" },
+    { "id": "erro-projetor", "texto": "Encobrir um erro no projetor" }
+  ],
+  "solucao": {
+    "culpado": "beto",
+    "motivo": "divida-jogo",
+    "evidencias": ["cortesia-beto", "fusivel-removido"],
+    "relatorio": [
+      "Beto entrou com a cortesia da F7 às 21:35. Cinco minutos depois, subiu a escada do palco com os sapatos sujos do barro da rua e tirou o fusível principal.",
+      "No escuro, saiu pela porta lateral com a caixa da bilheteria e voltou pela frente, fingindo chegar do bar. A graxa na porta e o barro na escada mostraram o caminho; a cortesia derrubou o álibi.",
+      "A féria da estreia ia pagar a dívida do carteado no Cais Velho."
+    ]
+  }
+}

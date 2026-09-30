@@ -1,0 +1,75 @@
+.presenca { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: var(--void); border: 4px solid var(--slate); font-size: 14px; color: var(--fog); }
+.presenca-luz { width: 8px; height: 8px; background: var(--teal); animation: piscar-luz 1.6s steps(2) infinite; }
+@keyframes piscar-luz { 50% { opacity: .3; } }
+
+.quadro-corpo { flex: 1; display: flex; gap: 16px; padding: 16px; min-height: 0; }
+.quadro-coluna { width: 1024px; flex: none; display: flex; flex-direction: column; gap: 12px; }
+.quadro-ferramentas { display: flex; align-items: center; gap: 8px; }
+.quadro-ferramentas h1 { font-size: 20px; letter-spacing: 1px; margin-right: 8px; white-space: nowrap; }
+.btn.fio-ativo { outline: 4px solid var(--amber-l); }
+.autores { margin-left: auto; display: flex; gap: 4px; align-items: center; font-size: 14px; color: var(--fog); }
+.autores > span:first-child { margin-right: 4px; }
+.autor { display: flex; align-items: center; gap: 4px; padding: 4px 6px; background: var(--night); border: 2px solid; color: var(--paper); }
+.autor i { width: 8px; height: 8px; }
+
+.quadro-moldura { position: relative; width: 1024px; height: 816px; background: var(--cork2); border: 4px solid var(--void); box-shadow: inset 0 0 0 4px var(--cork), 8px 8px 0 #000; padding: 4px; }
+.cortica { position: relative; width: 1008px; height: 800px; background-size: 256px 256px; overflow: hidden; touch-action: none; }
+.fios { position: absolute; inset: 0; width: 1008px; height: 800px; pointer-events: none; z-index: 0; }
+.dica-fio { position: absolute; left: 50%; top: 8px; transform: translateX(-50%); z-index: 20; padding: 6px 12px; background: var(--void); border: 4px solid var(--red); font-family: var(--texto); font-size: 14px; color: var(--paper); white-space: nowrap; }
+
+/* ---------- Itens ---------- */
+.item { position: absolute; z-index: 1; box-shadow: 8px 8px 0 var(--cork2); display: flex; flex-direction: column; gap: 6px; cursor: grab; user-select: none; }
+.item.arrastando { cursor: grabbing; z-index: 10; box-shadow: 12px 12px 0 #0006; }
+.modo-fio .item { cursor: crosshair; }
+.modo-fio .item:hover { outline: 4px solid var(--red); }
+.item.origem { outline: 4px solid var(--amber-l) !important; }
+.item-vitima, .item-suspeito, .item-cena { padding: 12px 12px 8px; background: var(--white); }
+.item-cena { padding: 16px 16px 8px; }
+.legenda-foto { font-family: var(--texto); font-size: 14px; color: var(--deep); text-align: center; }
+.legenda-foto.vitima { color: var(--red-d); font-weight: 700; }
+.foto-cena { position: relative; display: block; width: 192px; height: 128px; overflow: hidden; border: 2px solid var(--void); }
+.foto-cena img { position: absolute; width: 640px; height: 384px; }
+.item-nota { padding: 12px; background: var(--paper); border-top: 8px solid var(--autor); gap: 8px; }
+.nota-texto { font-size: 14px; line-height: 1.4; color: var(--deep); overflow-wrap: anywhere; }
+.item-assinatura { font-size: 12px; color: var(--cork2); letter-spacing: 1px; }
+.item-pista { flex-direction: row; align-items: center; gap: 8px; padding: 8px; background: var(--night); border: 4px solid var(--void); }
+.pista-cartao { display: flex; flex-direction: column; gap: 2px; font-size: 14px; min-width: 0; }
+.item-pista .item-assinatura { color: var(--fog); }
+.item-recorte { padding: 12px 14px; background: var(--paper2); gap: 6px; }
+.recorte-fonte { font-size: 12px; color: var(--cork2); letter-spacing: 2px; }
+.recorte-titulo { font-size: 20px; line-height: 1.1; color: var(--void); font-weight: 700; }
+.recorte-texto { font-size: 13px; line-height: 1.4; color: var(--deep); }
+.item-remover { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; display: none; align-items: center; justify-content: center; padding: 0; font-size: 12px; background: var(--red); color: var(--white); border: 2px solid var(--void); z-index: 5; }
+.item:hover .item-remover, .item-remover:focus-visible { display: flex; }
+.alfinete { position: absolute; width: 16px; height: 16px; z-index: 4; border: 2px solid var(--void); box-shadow: 4px 4px 0 var(--cork2); pointer-events: none; }
+
+.cursor-presenca { position: absolute; z-index: 6; display: flex; flex-direction: column; align-items: flex-start; pointer-events: none; animation: rondar 3s steps(6) infinite alternate; }
+.cursor-seta { width: 0; height: 0; border-left: 12px solid var(--cor); border-bottom: 12px solid transparent; }
+.cursor-nome { margin-left: 8px; padding: 2px 6px; background: var(--cor); color: var(--void); font-size: 12px; border: 2px solid var(--void); }
+@keyframes rondar { to { transform: translate(24px, 12px); } }
+
+/* ---------- Lateral ---------- */
+.quadro-lateral { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.teorias { display: flex; flex-direction: column; min-height: 0; }
+.teorias ul { display: flex; flex-direction: column; gap: 8px; padding: 8px; overflow-y: auto; }
+.sem-teorias { font-size: 14px; color: var(--fog); padding: 4px; }
+.teoria { display: flex; gap: 10px; padding: 10px; background: var(--ink); border: 4px solid var(--deep); }
+.teoria.em-alta { border-color: var(--amber); }
+.votos { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 40px; flex: none; font-size: 18px; }
+.votos button { width: 32px; height: 28px; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 14px; background: var(--deep); color: var(--fog); border: 2px solid var(--void); }
+.votos button:hover:not(:disabled) { background: var(--slate); color: var(--paper); }
+.votos button.votado { background: var(--amber); color: var(--void); }
+.votos button.contra { background: var(--red); color: var(--white); }
+.votos button:disabled { opacity: .4; cursor: default; }
+.teoria-corpo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.teoria-titulo { font-size: 18px; line-height: 1.1; color: var(--paper); }
+.teoria-texto { font-size: 14px; line-height: 1.45; color: var(--paper2); }
+.teoria-meta { display: flex; gap: 8px; font-size: 12px; letter-spacing: 1px; color: var(--fog); }
+.regra { padding: 12px; background: var(--ink); border: 4px dashed var(--dusk); display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--amber); letter-spacing: 1px; }
+.regra p { font-size: 14px; line-height: 1.5; color: var(--paper2); letter-spacing: 0; }
+
+/* ---------- Janela "prender no quadro" ---------- */
+.escolhas { display: flex; flex-wrap: wrap; gap: 8px; }
+.escolha { display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 6px; background: var(--ink); border: 4px solid var(--deep); font-size: 14px; color: var(--paper); text-align: left; }
+.escolha:hover { border-color: var(--amber); }
+.escolha-vazia { font-size: 14px; color: var(--fog); }

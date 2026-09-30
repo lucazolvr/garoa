@@ -1,0 +1,86 @@
+.interro { flex: 1; display: flex; min-height: 0; }
+
+/* ---------- Sala de interrogatório ---------- */
+.palco-interro { position: relative; width: 1024px; flex: none; overflow: hidden; background-color: var(--ink); background-size: 16px 16px; }
+.interro-parede { position: absolute; left: 0; right: 0; top: 0; height: 404px; background: repeating-linear-gradient(90deg, var(--night) 0 60px, var(--ink) 60px 64px); }
+.interro-luz { position: absolute; left: 332px; top: -20px; width: 360px; height: 440px; opacity: .9; }
+.interro-lampada { position: absolute; left: 496px; top: 0; width: 32px; height: 24px; background: var(--slate); border: 4px solid var(--void); border-top: none; }
+.interro-lampada-luz { position: absolute; left: 500px; top: 24px; width: 24px; height: 8px; background: var(--amber-l); }
+.interro-retrato { position: absolute; left: 384px; top: 148px; width: 256px; height: 256px; }
+.interro-mesa-borda { position: absolute; left: 0; right: 0; top: 404px; height: 8px; background: var(--cork); }
+.interro-mesa { position: absolute; left: 0; right: 0; top: 412px; bottom: 0; background: var(--cork2); border-top: 4px solid var(--void); }
+.interro-placa {
+  position: absolute; left: 50%; transform: translateX(-50%); top: 414px; padding: 6px 14px; white-space: nowrap;
+  background: var(--amber-d); border: 4px solid var(--void); box-shadow: inset -4px -4px 0 var(--cork2), inset 4px 4px 0 var(--amber);
+  color: var(--void); font-size: 16px; letter-spacing: 2px;
+}
+
+.interro-suspeitos { position: absolute; left: 24px; top: 24px; display: flex; flex-direction: column; gap: 8px; }
+.interro-suspeitos .rotulo { font-size: 14px; }
+.interro-suspeito { position: relative; display: block; width: 64px; }
+.interro-suspeito:hover .rosto { border-color: var(--amber-l) !important; }
+.interro-check { position: absolute; right: 0; bottom: 0; width: 16px; height: 16px; background: var(--fog); color: var(--void); font-size: 12px; display: flex; align-items: center; justify-content: center; }
+
+.interro-info { position: absolute; right: 24px; top: 24px; width: 240px; display: flex; flex-direction: column; gap: 8px; padding: 10px; background: var(--void); border: 4px solid var(--slate); }
+.interro-info-linha { display: flex; justify-content: space-between; font-size: 14px; letter-spacing: 1px; }
+.interro-info-linha span { color: var(--fog); }
+.interro-info-linha b { font-weight: 400; }
+.interro-nota { font-size: 13px; line-height: 1.45; color: var(--paper2); }
+
+/* ---------- Diálogo ---------- */
+.dialogo {
+  position: absolute; left: 24px; right: 24px; bottom: 24px; height: 332px; display: flex; padding: 8px;
+  background: var(--night); border: 4px solid var(--void); box-shadow: inset 0 0 0 4px var(--paper), 8px 8px 0 #000;
+}
+.dialogo-falante { position: absolute; left: 24px; top: -24px; padding: 4px 12px; background: var(--amber); color: var(--void); font-size: 16px; letter-spacing: 2px; border: 4px solid var(--void); }
+.dialogo-texto { flex: 1; min-width: 0; position: relative; padding: 28px 20px 16px; display: flex; flex-direction: column; gap: 12px; }
+.dialogo-pergunta { font-size: 14px; letter-spacing: 1px; color: var(--fog); }
+.dialogo-texto p { font-size: 19px; line-height: 1.7; color: var(--paper); text-wrap: pretty; }
+.frase.clicavel { cursor: pointer; }
+.frase.clicavel:hover { background: var(--slate); }
+.frase.marcada { border-bottom: 4px solid var(--red); }
+.frase.escolhida, .frase.escolhida:hover { background: var(--amber); color: var(--void); }
+.dialogo-ferramentas { align-self: flex-start; display: flex; gap: 4px; padding: 4px; background: var(--void); border: 4px solid var(--amber); box-shadow: 4px 4px 0 #000; }
+.dialogo-ferramentas button { font-size: 14px; padding: 6px 10px; border: 2px solid var(--void); }
+.ferramenta-marcar { color: var(--void); background: var(--amber); }
+.ferramenta-marcar:hover:not(:disabled) { background: var(--amber-l); }
+.ferramenta-marcar:disabled { background: var(--deep); color: var(--fog); cursor: default; }
+.ferramenta-anotar { color: var(--paper); background: var(--slate); }
+.ferramenta-anotar:hover { background: var(--dusk); }
+.dialogo-legenda { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 1px; color: var(--red); }
+.dialogo-legenda span { width: 12px; height: 4px; background: var(--red); }
+.dialogo-seta { position: absolute; right: 20px; bottom: 12px; font-size: 18px; color: var(--amber); animation: seta 1s steps(2) infinite; }
+@keyframes seta { 50% { transform: translateY(4px); } }
+
+.dialogo-perguntas { width: 360px; flex: none; display: flex; flex-direction: column; gap: 4px; padding: 16px 12px; background: var(--ink); border-left: 4px solid var(--slate); min-height: 0; }
+.dialogo-perguntas .rotulo { font-size: 14px; margin-bottom: 4px; }
+.dialogo-perguntas ul { display: flex; flex-direction: column; gap: 4px; overflow-y: auto; min-height: 0; }
+.pergunta {
+  width: 100%; display: flex; gap: 8px; align-items: center; text-align: left; padding: 8px 10px; background: none;
+  border: 2px solid transparent; font-family: var(--texto); font-size: 15px; line-height: 1.4; color: var(--paper);
+}
+button.pergunta:hover, button.pergunta:focus-visible { background: var(--slate); border-color: var(--amber); color: var(--amber-l); outline: none; }
+.pergunta-seta { font-family: var(--pixel); color: var(--dusk); }
+button.pergunta:hover .pergunta-seta { color: var(--amber); }
+.pergunta-mostrar { font-family: var(--pixel); color: var(--red); }
+.pergunta.bloqueada { color: var(--dusk); cursor: default; }
+.pergunta.bloqueada small { font-family: var(--pixel); font-size: 12px; }
+.pergunta-fim { font-size: 14px; color: var(--fog); padding: 8px 10px; }
+.pausar { margin-top: auto; padding: 8px 10px; font-size: 14px; letter-spacing: 1px; color: var(--fog); background: none; border: 0; border-top: 4px solid var(--night); text-align: left; }
+.pausar:hover { color: var(--paper); }
+
+/* ---------- Lateral ---------- */
+.interro-lateral { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 16px; background: var(--ink); border-left: 4px solid var(--slate); overflow-y: auto; }
+.trechos { display: flex; flex-direction: column; gap: 8px; padding: 8px; }
+.trecho { padding: 10px 12px; background: var(--paper); border-left: 8px solid var(--fog); display: flex; flex-direction: column; gap: 6px; }
+.trecho .texto { font-size: 15px; line-height: 1.45; color: var(--deep); }
+.trecho-meta { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; letter-spacing: 1px; color: var(--cork2); }
+.historico { margin: 0; padding: 8px; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.historico-item { width: 100%; display: flex; gap: 10px; padding: 6px; text-align: left; background: none; border: 2px solid transparent; }
+.historico-item:hover { background: var(--ink); }
+.historico-item.atual { border-color: var(--slate); background: var(--ink); }
+.historico-n { font-size: 14px; width: 28px; flex: none; }
+.historico-texto { display: flex; flex-direction: column; gap: 2px; }
+.historico-texto .texto { font-size: 14px; line-height: 1.4; color: var(--paper); }
+.historico-meta { font-size: 12px; letter-spacing: 1px; color: var(--fog); }
+.historico-vazio { font-size: 14px; color: var(--fog); padding: 4px; }

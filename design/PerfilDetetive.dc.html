@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="pixel.js"></script>
+<style>body{margin:0;background:#07061a;} a{color:#ffb43a;} a:hover{color:#ffdd7e;} img{image-rendering:pixelated;}</style>
+</helmet>
+<div data-screen-label="06 Perfil do detetive" style="width:1440px; height:1000px; background:#07061a; font-family:'Pixelify Sans',monospace; color:#ebdfc2; display:flex; flex-direction:column; overflow:hidden;">
+  <div style="height:64px; flex:none; display:flex; align-items:center; gap:16px; padding:0 20px; background:#0e0d24; border-bottom:4px solid #302d68; box-sizing:border-box;">
+    <img src="{{ A.icons.lupa }}" style="width:40px; height:40px;">
+    <span style="font-size:28px; font-weight:700; color:#ffb43a; letter-spacing:3px;">GAROA</span>
+    <span style="font-size:16px; color:#9e9fc9; letter-spacing:1px;">▸ PERFIL</span>
+    <div style="margin-left:auto; width:48px; height:48px; border:4px solid #ffb43a; background:#161538; overflow:hidden; position:relative; box-sizing:border-box;"><img src="{{ A.pt.vega }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;"></div>
+  </div>
+  <div style="flex:1; display:flex; gap:24px; padding:32px; min-height:0;">
+    <div style="width:320px; flex:none; display:flex; flex-direction:column; gap:16px;">
+      <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:20px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+        <img src="{{ A.pt64.vega }}" style="width:256px; height:256px; border:4px solid #07061a;">
+        <span style="font-size:32px; font-weight:700; letter-spacing:1px; line-height:1;">INSPETORA VEGA</span>
+        <span style="font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9;">@vega · detetive desde mar/2026</span>
+        <div style="align-self:stretch; display:flex; gap:12px; align-items:center; padding:10px; background:#0e0d24; border:4px solid #ffb43a;">
+          <img src="{{ A.icons.distintivo }}" style="width:48px; height:48px;">
+          <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; font-size:14px; letter-spacing:1px;"><span style="color:#ffb43a;">RANK · NÍVEL 14</span><span style="color:#9e9fc9;">2.340/3.000</span></div>
+            <div style="height:12px; background:repeating-linear-gradient(90deg,#221f4e 0 16px,#0e0d24 16px 20px);"><div style="width:78%; height:12px; background:repeating-linear-gradient(90deg,#ffb43a 0 16px,#0e0d24 16px 20px);"></div></div>
+            <span style="font-size:12px; color:#9e9fc9; letter-spacing:1px;">PRÓXIMO: COMISSÁRIA</span>
+          </div>
+        </div>
+        <div style="align-self:stretch; display:flex; gap:6px; flex-wrap:wrap;">
+          <span style="font-size:12px; padding:4px 8px; background:#302d68; letter-spacing:1px;">CENAS DO CRIME</span>
+          <span style="font-size:12px; padding:4px 8px; background:#302d68; letter-spacing:1px;">LINHAS DO TEMPO</span>
+          <span style="font-size:12px; padding:4px 8px; background:#302d68; letter-spacing:1px;">INTERROGATÓRIOS</span>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+        <div style="padding:12px 8px; background:#161538; border:4px solid #221f4e; display:flex; flex-direction:column; gap:4px; align-items:center;"><span style="font-size:32px; color:#ffb43a; line-height:1;">23</span><span style="font-size:12px; color:#9e9fc9; letter-spacing:1px; text-align:center;">RESOLVIDOS</span></div>
+        <div style="padding:12px 8px; background:#161538; border:4px solid #221f4e; display:flex; flex-direction:column; gap:4px; align-items:center;"><span style="font-size:32px; color:#4fd1c5; line-height:1;">142</span><span style="font-size:12px; color:#9e9fc9; letter-spacing:1px; text-align:center;">CONTRIBUIÇÕES</span></div>
+        <div style="padding:12px 8px; background:#161538; border:4px solid #221f4e; display:flex; flex-direction:column; gap:4px; align-items:center;"><span style="font-size:32px; color:#ebdfc2; line-height:1;">31</span><span style="font-size:12px; color:#9e9fc9; letter-spacing:1px; text-align:center;">TEORIAS ACEITAS</span></div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:20px;">
+      <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>CASOS RESOLVIDOS</span><span style="color:#9e9fc9; font-size:14px;">VER OS 23 ▸</span></div>
+        <div style="display:flex; flex-direction:column; padding:4px 12px;">
+          <sc-for list="{{ solved }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:4px solid #0e0d24;">
+              <img src="{{ A.mk.resolvido }}" style="width:24px; height:36px;">
+              <div style="flex:1; display:flex; flex-direction:column; gap:2px; min-width:0;"><span style="font-size:18px;">{{ c.title }}</span><span style="font-family:'Courier Prime',monospace; font-size:14px; color:#9e9fc9;">{{ c.meta }}</span></div>
+              <span style="font-size:12px; letter-spacing:1px; padding:2px 6px; border:2px solid {{ c.roleC }}; color:{{ c.roleC }};">{{ c.role }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1; background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>AJUDA EM CASOS DE OUTROS</span><span style="color:#9e9fc9; font-size:14px;">142</span></div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:12px;">
+          <sc-for list="{{ contrib }}" as="k" hint-placeholder-count="3">
+            <div style="display:flex; gap:12px; padding:10px; background:#0e0d24; border:4px solid #221f4e;">
+              <div style="width:56px; height:56px; flex:none; display:flex; align-items:center; justify-content:center; background:#302d68; border:4px solid #07061a; box-sizing:border-box;"><img src="{{ k.img }}" style="width:48px; height:48px;"></div>
+              <div style="flex:1; display:flex; flex-direction:column; gap:4px; min-width:0;">
+                <span style="font-size:12px; letter-spacing:1px; color:#9e9fc9;">{{ k.kind }} · {{ k.case }}</span>
+                <span style="font-family:'Courier Prime',monospace; font-size:15px; line-height:1.45; color:#ebdfc2;">“{{ k.text }}”</span>
+              </div>
+              <span style="align-self:center; font-size:14px; color:#ffb43a;">▲ {{ k.votes }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="width:360px; flex:none; background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px; align-self:flex-start;">
+      <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>CONQUISTAS</span><span style="color:#9e9fc9; font-size:14px;">8/24</span></div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:12px;">
+        <sc-for list="{{ ach }}" as="a" hint-placeholder-count="12">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 4px; background:#0e0d24; border:4px solid {{ a.border }}; opacity:{{ a.op }};" style-hover="border-color:#ffdd7e;">
+            <div style="width:56px; height:56px; display:flex; align-items:center; justify-content:center; background:{{ a.tile }}; border:4px solid #07061a; box-sizing:border-box;"><img src="{{ a.img }}" style="width:48px; height:48px; opacity:{{ a.iop }};"></div>
+            <span style="font-size:12px; text-align:center; letter-spacing:1px; color:{{ a.fg }};">{{ a.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  state = { art: null };
+  componentDidMount() { this._t = setInterval(() => { if (window.PX) { clearInterval(this._t); this.setState({ art: window.PX.get() }); } }, 30); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const A = this.state.art || { icons: {}, pt: {}, pt64: {}, mk: {} };
+    const I = A.icons;
+    const ach = [['relogio', 'MESTRE DO TEMPO', 1], ['lupa', 'OLHO CLÍNICO', 1], ['pegada', 'RASTREADORA', 1], ['carta', 'CARTÓGRAFA DE CARTAS', 1], ['chave', 'CHAVEIRA', 1], ['distintivo', 'DISTINTIVO 10', 1], ['digital', 'PERITA', 1], ['recibo', 'SEGUE O DINHEIRO', 1], ['xicara', '???', 0], ['alerta', '???', 0], ['lupa', '???', 0], ['distintivo', '???', 0]];
+    return {
+      A,
+      solved: [
+        { title: 'O Relógio Parado', meta: '#0412 · Centro Luz · hoje', role: 'ACUSOU', roleC: '#ffb43a' },
+        { title: 'Joias da Viúva Salgado', meta: '#0390 · Vila Neblina · ontem', role: 'ACUSOU', roleC: '#ffb43a' },
+        { title: 'A Carta sem Remetente', meta: '#0398 · Alto dos Vidros · 12 set', role: 'AJUDOU', roleC: '#4fd1c5' },
+        { title: 'O Cão do Cais 3', meta: '#0351 · Cais Velho · 28 ago', role: 'ACUSOU', roleC: '#ffb43a' }
+      ],
+      contrib: [
+        { img: I.digital, kind: 'PISTA', case: '#0405 O VIOLINISTA DO MERCADO · DE @SGT.MOREIRA', text: 'A corda Mi foi trocada depois do concerto, não antes.', votes: 11 },
+        { img: I.lupa, kind: 'CONEXÃO', case: '#0421 APAGÃO NO CINE ESTRELA · DE @CAJU', text: 'O projecionista e o eletricista usam a mesma escada.', votes: 7 },
+        { img: I.carta, kind: 'TEORIA', case: '#0419 SUMIÇO NO CAIS 7 · DE @LUPA_ANA', text: 'O barco não saiu. Alguém quer que pareça que saiu.', votes: 4 }
+      ],
+      ach: ach.map(([k, n, on]) => ({ img: I[k], name: n, border: on ? '#302d68' : '#161538', tile: on ? '#302d68' : '#0e0d24', op: on ? 1 : .7, iop: on ? 1 : .15, fg: on ? '#ebdfc2' : '#46457f' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

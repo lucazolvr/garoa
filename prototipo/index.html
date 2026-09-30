@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAROA · Mapa da cidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/garoa.css">
+<link rel="stylesheet" href="css/mapa.css">
+</head>
+<body>
+<div class="palco">
+  <div class="tela" id="tela">
+
+    <header class="topo">
+      <div class="marca">
+        <img data-art="icons.lupa" alt="">
+        <div class="marca-texto">
+          <span class="marca-nome">GAROA</span>
+          <span class="marca-sub">DETETIVES EM REDE</span>
+        </div>
+      </div>
+      <nav class="abas">
+        <button class="aba" aria-current="page">MAPA</button>
+        <button class="aba">MEUS CASOS</button>
+        <button class="aba">QUADROS</button>
+        <button class="aba">ARQUIVO</button>
+      </nav>
+      <label class="busca">
+        <img data-art="icons.lupa" alt="">
+        <input type="search" placeholder="Buscar caso, bairro ou suspeito…" aria-label="Buscar caso, bairro ou suspeito">
+      </label>
+      <button class="btn btn-ambar">+ ABRIR CASO</button>
+      <button class="caixa-cartas" aria-label="3 mensagens novas">
+        <img data-art="icons.carta" alt="">
+        <span class="contador">3</span>
+      </button>
+      <div class="retrato eu"><img data-art="pt.vega" alt="Seu perfil"></div>
+    </header>
+
+    <div class="corpo">
+      <main class="mapa" id="mapa" data-camadas="0">
+        <img class="mapa-arte" src="../src/arte/assets/mapa-cidade.png" alt="Mapa da cidade de Garoa">
+        <canvas class="mapa-arte mapa-vivo" id="mapa-vivo"></canvas>
+
+        <div class="bairro" style="left:640px; top:232px;">ALTO DOS VIDROS</div>
+        <div class="bairro" style="left:620px; top:492px;">CENTRO LUZ</div>
+        <div class="bairro" style="left:20px; top:660px;">CAIS VELHO</div>
+
+        <button class="marcador" data-bob style="left:8px; top:200px;" aria-label="Caso novo"><img data-art="mk.novo" alt=""></button>
+        <button class="marcador" data-bob style="left:270px; top:147px;" aria-label="Caso urgente"><img data-art="mk.alerta" alt=""></button>
+        <button class="marcador" data-bob style="left:120px; top:14px;" aria-label="Caso resolvido"><img data-art="mk.resolvido" alt=""></button>
+        <button class="marcador" data-bob style="left:953px; top:74px;" aria-label="Caso resolvido"><img data-art="mk.resolvido" alt=""></button>
+        <button class="marcador" data-bob style="left:823px; top:269px;" aria-label="Caso em andamento"><img data-art="mk.andamento" alt=""></button>
+        <button class="marcador" data-bob style="left:173px; top:497px;" aria-label="Caso novo"><img data-art="mk.novo" alt=""></button>
+        <div class="marcador-selecao" style="left:317px; top:241px;"></div>
+        <button class="marcador" data-bob style="left:325px; top:249px;" aria-label="Caso #0412, O Relógio Parado (selecionado)" aria-pressed="true"><img data-art="mk.andamento" alt=""></button>
+
+        <div class="pino" style="left:400px; top:424px; --cor:var(--teal);"><div class="retrato"><img data-art="pt.ana" alt="lupa_ana"></div><div class="pino-haste"></div></div>
+        <div class="pino" style="left:444px; top:432px; --cor:var(--cork);"><div class="retrato"><img data-art="pt.caju" alt="caju"></div><div class="pino-haste"></div></div>
+        <div class="etiqueta" style="left:380px; top:470px; --cor:var(--teal);">LUPA_ANA</div>
+        <div class="pino" style="left:876px; top:338px; --cor:var(--fog);"><div class="retrato"><img data-art="pt.moreira" alt="sgt.moreira"></div><div class="pino-haste"></div></div>
+        <div class="pino pino-ausente" style="left:180px; top:40px; --cor:var(--fog);"><div class="retrato"><img data-art="pt.nevoeiro" alt="nevoeiro"></div><div class="pino-haste"></div></div>
+        <div class="pino" style="left:236px; top:592px; --cor:var(--amber);"><div class="retrato"><img data-art="pt.vega" alt="vega (você)"></div><div class="pino-haste"></div></div>
+        <div class="etiqueta" style="left:234px; top:572px; --cor:var(--amber);">VOCÊ</div>
+
+        <section class="painel painel-flutuante cartao-caso" aria-label="Caso selecionado">
+          <div class="cartao-caso-topo">
+            <span class="cartao-caso-num">CASO #0412</span>
+            <span class="selo" style="background:var(--teal);">EM ANDAMENTO</span>
+          </div>
+          <div class="cartao-caso-corpo">
+            <h2 class="cartao-caso-titulo" style="margin:0; font-weight:400;">O Relógio Parado</h2>
+            <p class="cartao-caso-resumo" style="margin:0;">Hotel Alvorada, quarto 304. O relojoeiro Otávio Brandão foi encontrado morto. O relógio da parede marca 22:17.</p>
+            <div class="cartao-caso-equipe">
+              <div>
+                <div class="retrato"><img data-art="pt.ana" alt="lupa_ana"></div>
+                <div class="retrato"><img data-art="pt.caju" alt="caju"></div>
+                <div class="retrato"><img data-art="pt.nevoeiro" alt="nevoeiro"></div>
+              </div>
+              <span>+2 · 5 DETETIVES</span>
+            </div>
+            <div class="barra" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da investigação"><div style="width:62%;"></div></div>
+            <div class="cartao-caso-acoes">
+              <button class="btn btn-ambar">ENTRAR NO CASO</button>
+              <button class="btn btn-ardosia">SEGUIR</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="zoom">
+          <button aria-label="Aproximar">+</button>
+          <button aria-label="Afastar">−</button>
+        </div>
+
+        <div class="clima" aria-live="polite">
+          <span class="clima-luz"></span>CHUVA · <span id="relogio">23:14</span> · <span id="online">12</span> DETETIVES NA RUA
+        </div>
+
+        <aside class="painel painel-flutuante legenda">
+          <div class="painel-titulo">LEGENDA</div>
+          <div class="legenda-itens">
+            <img data-art="mk.novo" alt=""><span>CASO NOVO</span>
+            <img data-art="mk.andamento" alt=""><span>EM ANDAMENTO</span>
+            <img data-art="mk.resolvido" alt=""><span>RESOLVIDO</span>
+            <img data-art="mk.alerta" alt=""><span class="legenda-urgente">URGENTE / PISTA NOVA</span>
+          </div>
+        </aside>
+      </main>
+
+      <aside class="lateral">
+        <section class="painel">
+          <h2 class="painel-titulo" style="margin:0; font-weight:400;">CASOS EM DESTAQUE</h2>
+          <ul class="destaques" id="destaques"></ul>
+        </section>
+        <section class="painel atividade">
+          <div class="painel-titulo"><h2 style="margin:0; font:inherit;">ATIVIDADE RECENTE</h2><button class="ver-tudo">VER TUDO ▸</button></div>
+          <ul class="feed" id="feed" aria-live="polite"></ul>
+        </section>
+      </aside>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/mapa-camadas.js"></script>
+<script src="js/pixel.js"></script>
+<script src="js/mapa.js"></script>
+</body>
+</html>

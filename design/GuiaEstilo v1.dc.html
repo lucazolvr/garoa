@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="pixel.js"></script>
+<style>body{margin:0;background:#07061a;} a{color:#ffb43a;} a:hover{color:#ffdd7e;} img{image-rendering:pixelated;}</style>
+</helmet>
+<div data-screen-label="07 Guia de estilo" style="width:1440px; background:#07061a; font-family:'Pixelify Sans',monospace; color:#ebdfc2; padding:48px; box-sizing:border-box; display:flex; flex-direction:column; gap:40px;">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px; padding-bottom:24px; border-bottom:4px solid #302d68;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <span style="font-size:16px; color:#ffb43a; letter-spacing:3px;">GAROA · GUIA DE ESTILO</span>
+      <span style="font-size:56px; font-weight:700; line-height:1;">Noite, chuva e papel.</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; font-family:'Courier Prime',monospace; font-size:15px; line-height:1.5; color:#d0bf99; max-width:640px;">
+      <span><b style="color:#ffb43a;">1 pixel de arte = 4px.</b> Sprites, bordas e espaços em múltiplos de 4.</span>
+      <span><b style="color:#ffb43a;">Sombras duras.</b> Deslocamento de 8px, sem desfoque, sem cantos arredondados.</span>
+      <span><b style="color:#ffb43a;">Fonte pixel só na interface:</b> títulos, botões, rótulos.</span>
+      <span><b style="color:#ffb43a;">Texto longo em máquina de escrever:</b> relatórios, depoimentos, notas.</span>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <span style="font-size:24px; letter-spacing:2px;">PALETA · 25 CORES</span>
+    <div style="display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:20px;">
+      <sc-for list="{{ palette }}" as="g" hint-placeholder-count="6">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">{{ g.name }}</span>
+          <sc-for list="{{ g.c }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div style="width:48px; height:48px; flex:none; background:{{ c.hex }}; border:4px solid #07061a; box-shadow:inset 0 0 0 2px #302d68;"></div>
+              <div style="display:flex; flex-direction:column;"><span style="font-size:14px;">{{ c.n }}</span><span style="font-family:'Courier Prime',monospace; font-size:13px; color:#9e9fc9;">{{ c.hex }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+      <div style="padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;">PIXELIFY SANS · INTERFACE</div>
+      <div style="padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:baseline; gap:16px;"><span style="width:72px; font-size:12px; color:#9e9fc9;">48 / 700</span><span style="font-size:48px; font-weight:700; line-height:1;">O Relógio Parado</span></div>
+        <div style="display:flex; align-items:baseline; gap:16px;"><span style="width:72px; font-size:12px; color:#9e9fc9;">24 / 400</span><span style="font-size:24px;">SUSPEITOS · PISTAS</span></div>
+        <div style="display:flex; align-items:baseline; gap:16px;"><span style="width:72px; font-size:12px; color:#9e9fc9;">16 / 400</span><span style="font-size:16px; letter-spacing:2px; color:#ffdd7e;">BARRA DE TÍTULO · BOTÃO</span></div>
+        <div style="display:flex; align-items:baseline; gap:16px;"><span style="width:72px; font-size:12px; color:#9e9fc9;">12 / 400</span><span style="font-size:12px; letter-spacing:1px;">CHIP · META · HÁ 4 MIN</span></div>
+        <span style="font-family:'Courier Prime',monospace; font-size:14px; color:#9e9fc9;">Mínimo 12px, sempre em caixa alta abaixo de 16px, com espaçamento de 1–2px.</span>
+      </div>
+    </div>
+    <div style="background:#ebdfc2; color:#221f4e; border:4px solid #07061a; box-shadow:8px 8px 0 #000; padding:4px;">
+      <div style="padding:8px 12px; background:#d0bf99; font-size:16px; letter-spacing:2px; color:#8c1e2d;">COURIER PRIME · TEXTO LONGO</div>
+      <div style="padding:20px; display:flex; flex-direction:column; gap:14px;">
+        <p style="margin:0; font-family:'Courier Prime',monospace; font-size:18px; line-height:1.65;">“Subi no palco às nove e meia, como toda quinta. Toquei até as onze, sem parar.”</p>
+        <p style="margin:0; font-family:'Courier Prime',monospace; font-size:16px; line-height:1.6;">Relatórios e depoimentos: 16–19px, entrelinha 1.6. Negrito para nomes e provas. <i>Itálico</i> para citações de terceiros.</p>
+        <p style="margin:0; font-family:'Courier Prime',monospace; font-size:14px; line-height:1.5; color:#6a4628;">Notas e metadados: 13–15px. Nunca abaixo de 13px.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <span style="font-size:24px; letter-spacing:2px;">BOTÕES E ESTADOS</span>
+    <div style="display:grid; grid-template-columns:160px repeat(4,minmax(0,1fr)); gap:16px 20px; align-items:center;">
+      <span></span><span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">PADRÃO</span><span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">HOVER</span><span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">ATIVO</span><span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">DESABILITADO</span>
+      <sc-for list="{{ buttons }}" as="row" hint-placeholder-count="3">
+        <span style="font-size:16px;">{{ row.name }}</span>
+        <sc-for list="{{ row.states }}" as="b" hint-placeholder-count="4">
+          <div style="justify-self:start; font-size:16px; letter-spacing:1px; padding:10px 18px; border:4px solid #07061a; background:{{ b.bg }}; color:{{ b.fg }}; box-shadow:{{ b.sh }}; transform:{{ b.tr }};">{{ row.label }}</div>
+        </sc-for>
+      </sc-for>
+      <span style="font-size:16px;">CAMPO</span>
+      <div style="display:flex; align-items:center; height:44px; padding:0 12px; background:#07061a; border:4px solid #302d68; font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9; box-sizing:border-box;">Buscar pista…</div>
+      <div style="display:flex; align-items:center; height:44px; padding:0 12px; background:#07061a; border:4px solid #46457f; font-family:'Courier Prime',monospace; font-size:15px; color:#9e9fc9; box-sizing:border-box;">Buscar pista…</div>
+      <div style="display:flex; align-items:center; height:44px; padding:0 12px; background:#07061a; border:4px solid #ffb43a; font-family:'Courier Prime',monospace; font-size:15px; color:#ebdfc2; box-sizing:border-box;">relógio<span style="width:8px; height:18px; background:#ffb43a; margin-left:2px;"></span></div>
+      <div style="display:flex; align-items:center; height:44px; padding:0 12px; background:#161538; border:4px solid #221f4e; font-family:'Courier Prime',monospace; font-size:15px; color:#46457f; box-sizing:border-box;">Bloqueado</div>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; align-items:start;">
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">JANELA</span>
+      <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68, 8px 8px 0 #000; padding:4px;">
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>TÍTULO</span><span>✕</span></div>
+        <div style="padding:14px; font-family:'Courier Prime',monospace; font-size:14px; line-height:1.5; color:#d0bf99;">Borda externa preta, anel interno ardósia, sombra dura.</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">PAPEL / RELATÓRIO</span>
+      <div style="background:#ebdfc2; border:4px solid #07061a; box-shadow:8px 8px 0 #000; padding:16px; display:flex; flex-direction:column; gap:6px;">
+        <span style="font-size:14px; letter-spacing:2px; color:#8c1e2d;">RELATÓRIO</span>
+        <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.5; color:#221f4e;">Para documentos do mundo do jogo.</span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">DIÁLOGO</span>
+      <div style="position:relative; margin-top:16px; background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #ebdfc2, 8px 8px 0 #000; padding:24px 16px 16px;">
+        <span style="position:absolute; left:12px; top:-18px; padding:2px 10px; background:#ffb43a; color:#07061a; font-size:14px; border:4px solid #07061a;">RUI</span>
+        <span style="font-family:'Courier Prime',monospace; font-size:15px; line-height:1.55;">Fiquei no <span style="background:#ffb43a; color:#07061a;">camarim</span>. <span style="border-bottom:4px solid #e2433b;">O Caio sabe.</span></span>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <span style="font-size:14px; color:#9e9fc9; letter-spacing:2px;">NOTA DO QUADRO</span>
+      <div style="background-image:url({{ A.cork }}); background-size:256px 256px; padding:20px; border:4px solid #07061a;">
+        <div style="position:relative; background:#ebdfc2; border-top:8px solid #4fd1c5; box-shadow:8px 8px 0 #6a4628; padding:12px; display:flex; flex-direction:column; gap:6px;">
+          <div style="position:absolute; left:50%; top:-16px; margin-left:-8px; width:16px; height:16px; background:#4fd1c5; border:2px solid #07061a; box-sizing:border-box;"></div>
+          <span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.4; color:#221f4e;">Cor da faixa e do alfinete = autor.</span>
+          <span style="font-size:12px; letter-spacing:1px; color:#221f4e;">@LUPA_ANA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;"><span style="font-size:24px; letter-spacing:2px;">PERSONAGENS · 16×24</span><span style="font-family:'Courier Prime',monospace; font-size:14px; color:#9e9fc9;">Contorno preto, luz de poste pela esquerda, sombra no chão. Mesma escala de 4px.</span></div>
+    <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;">
+      <sc-for list="{{ cast }}" as="grp" hint-placeholder-count="4">
+        <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+          <div style="padding:6px 12px; background:{{ grp.bg }}; font-size:16px; letter-spacing:3px; color:#f6f0e2; text-align:center;">{{ grp.name }}</div>
+          <div style="display:flex; justify-content:space-around; align-items:flex-end; gap:8px; padding:16px 8px 12px; background:#221f4e;">
+            <sc-for list="{{ grp.items }}" as="it" hint-placeholder-count="3">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div style="position:relative; width:64px; height:100px;"><div style="position:absolute; left:12px; bottom:0; width:40px; height:8px; background:#07061a;"></div><img src="{{ it.img }}" style="position:absolute; left:0; top:0; width:64px; height:96px;"></div>
+                <span style="font-size:12px; letter-spacing:1px; color:#9e9fc9;">{{ it.n }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:24px; align-items:start;">
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <span style="font-size:24px; letter-spacing:2px;">ÍCONES DE PISTA · 12×12</span>
+      <div style="display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px;">
+        <sc-for list="{{ icons }}" as="i" hint-placeholder-count="10">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <div style="width:64px; height:64px; display:flex; align-items:center; justify-content:center; background:#302d68; border:4px solid #07061a; box-sizing:border-box;"><img src="{{ i.img }}" style="width:48px; height:48px;"></div>
+            <span style="font-size:12px; letter-spacing:1px; color:#9e9fc9; text-align:center;">{{ i.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <span style="font-size:24px; letter-spacing:2px;">MARCADORES</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="display:flex; align-items:center; gap:10px;"><img src="{{ A.mk.novo }}" style="width:48px; height:56px;"><span style="font-size:14px;">NOVO</span></div>
+        <div style="display:flex; align-items:center; gap:10px;"><img src="{{ A.mk.andamento }}" style="width:48px; height:56px;"><span style="font-size:14px;">EM ANDAMENTO</span></div>
+        <div style="display:flex; align-items:center; gap:10px;"><img src="{{ A.mk.resolvido }}" style="width:48px; height:56px;"><span style="font-size:14px;">RESOLVIDO</span></div>
+        <div style="display:flex; align-items:center; gap:10px;"><img src="{{ A.mk.alerta }}" style="width:48px; height:56px;"><span style="font-size:14px; color:#e2433b;">URGENTE</span></div>
+      </div>
+      <div style="display:flex; gap:8px; align-items:flex-end; padding:12px; background:#221f4e; border:4px solid #07061a;">
+        <img src="{{ A.mini.vega }}" style="width:40px; height:52px;"><img src="{{ A.mini.ana }}" style="width:40px; height:52px;"><img src="{{ A.mini.caju }}" style="width:40px; height:52px;"><img src="{{ A.mini.nevoeiro }}" style="width:40px; height:52px;"><img src="{{ A.mini.moreira }}" style="width:40px; height:52px;">
+      </div>
+      <span style="font-family:'Courier Prime',monospace; font-size:13px; color:#9e9fc9;">Avatares no mapa: 10×13 px. Opacos = investigando agora; translúcidos = passaram há pouco.</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <span style="font-size:24px; letter-spacing:2px;">ESTADOS E MEDIDORES</span>
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <span style="font-size:12px; padding:2px 8px; background:#ffb43a; color:#07061a; letter-spacing:1px;">NOVO</span>
+        <span style="font-size:12px; padding:2px 8px; background:#4fd1c5; color:#07061a; letter-spacing:1px;">EM ANDAMENTO</span>
+        <span style="font-size:12px; padding:2px 8px; background:#9e9fc9; color:#07061a; letter-spacing:1px;">RESOLVIDO</span>
+        <span style="font-size:12px; padding:2px 8px; background:#e2433b; color:#f6f0e2; letter-spacing:1px;">IMPORTANTE</span>
+      </div>
+      <div style="height:16px; background:repeating-linear-gradient(90deg,#221f4e 0 20px,#07061a 20px 24px);"><div style="width:62%; height:16px; background:repeating-linear-gradient(90deg,#4fd1c5 0 20px,#07061a 20px 24px);"></div></div>
+      <div style="display:flex; gap:16px; align-items:center;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:2px;"><div style="width:32px; height:28px; display:flex; align-items:center; justify-content:center; font-size:14px; background:#221f4e; color:#9e9fc9; border:2px solid #07061a;">▲</div><span style="font-size:12px; color:#9e9fc9;">VOTAR</span></div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:2px;"><div style="width:32px; height:28px; display:flex; align-items:center; justify-content:center; font-size:14px; background:#ffb43a; color:#07061a; border:2px solid #07061a;">▲</div><span style="font-size:12px; color:#ffb43a;">VOTADO</span></div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:2px;"><div style="width:32px; height:28px; display:flex; align-items:center; justify-content:center; font-size:14px; background:#161538; color:#302d68; border:2px solid #221f4e;">▲</div><span style="font-size:12px; color:#46457f;">SUA TEORIA</span></div>
+      </div>
+      <div style="position:relative; width:108px; height:60px; padding:4px; border:4px solid #e2433b; box-sizing:border-box;"><div style="height:100%; border:2px solid #e2433b; display:flex; align-items:center; justify-content:center; font-size:14px; color:#e2433b; font-weight:700; letter-spacing:1px; box-sizing:border-box;">RESOLVIDO</div><img src="{{ A.wear }}" style="position:absolute; inset:0; width:100%; height:100%;"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1700}}">
+class Component extends DCLogic {
+  state = { art: null };
+  componentDidMount() { this._t = setInterval(() => { if (window.PX) { clearInterval(this._t); this.setState({ art: window.PX.get() }); } }, 30); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const A = this.state.art || { icons: {}, mk: {}, mini: {}, ch: {} };
+    const C = A.ch;
+    const g = (name, arr) => ({ name, c: arr.map(([n, hex]) => ({ n, hex })) });
+    const I = A.icons;
+    const st = (bg, fg, hi, lo, pressed, hov) => [
+      { bg, fg, sh: `inset -4px -4px 0 ${lo}${hov ? '' : `, inset 4px 4px 0 ${hi}`}`, tr: 'none' },
+      { bg: hov || hi, fg, sh: `inset -4px -4px 0 ${bg}, inset 4px 4px 0 ${hi}`, tr: 'none' },
+      { bg: pressed, fg, sh: `inset 4px 4px 0 ${lo}`, tr: 'translateY(4px)' },
+      { bg: '#161538', fg: '#46457f', sh: 'none', tr: 'none' }
+    ];
+    return {
+      A,
+      palette: [
+        g('NOITE', [['void', '#07061a'], ['ink', '#0e0d24'], ['night', '#161538'], ['deep', '#221f4e']]),
+        g('NEBLINA', [['slate', '#302d68'], ['dusk', '#46457f'], ['haze', '#6c6ba6'], ['fog', '#9e9fc9']]),
+        g('PAPEL', [['white', '#f6f0e2'], ['paper', '#ebdfc2'], ['paper2', '#d0bf99'], ['paper3', '#9e8a66']]),
+        g('POSTE', [['amberL', '#ffdd7e'], ['amber', '#ffb43a'], ['amberD', '#c26f1f'], ['cork', '#9b6b3d']]),
+        g('ALERTA + NEON', [['red', '#e2433b'], ['redD', '#8c1e2d'], ['teal', '#4fd1c5'], ['moss', '#284a47'], ['leaf', '#3b6e4f']]),
+        g('PELE + MADEIRA', [['skin1', '#f0c196'], ['skin2', '#c88a5c'], ['skin3', '#865236'], ['cork2', '#6a4628']])
+      ],
+      buttons: [
+        { name: 'PRIMÁRIO', label: 'ENTRAR NO CASO', states: st('#ffb43a', '#07061a', '#ffdd7e', '#c26f1f', '#c26f1f') },
+        { name: 'SECUNDÁRIO', label: 'ABRIR QUADRO', states: st('#302d68', '#ebdfc2', '#46457f', '#221f4e', '#221f4e') },
+        { name: 'ALERTA', label: 'ENVIAR SOLUÇÃO', states: st('#e2433b', '#f6f0e2', '#ffdd7e', '#8c1e2d', '#8c1e2d', '#e2433b') }
+      ],
+      cast: [
+        { name: 'DETETIVE', bg: '#6a4628', items: [{ img: C.det, n: 'PARADO' }, { img: C.detWalk, n: 'ANDANDO' }, { img: C.detLupa, n: 'LUPA' }] },
+        { name: 'POLICIAL', bg: '#302d68', items: [{ img: C.pol, n: 'PARADO' }, { img: C.polWalk, n: 'ANDANDO' }] },
+        { name: 'SUSPEITO', bg: '#8c1e2d', items: [{ img: C.ban, n: 'CAPUZ' }, { img: C.banDark, n: 'NOTURNO' }] },
+        { name: 'CIVIL', bg: '#284a47', items: [{ img: C.civ, n: 'TERNO' }, { img: C.civ2, n: 'CASACO' }] }
+      ],
+      icons: [['lupa', 'LUPA'], ['relogio', 'RELÓGIO'], ['carta', 'CARTA'], ['pegada', 'PEGADA'], ['chave', 'CHAVE'], ['xicara', 'XÍCARA'], ['recibo', 'RECIBO'], ['digital', 'DIGITAL'], ['distintivo', 'DISTINTIVO'], ['alerta', 'ALERTA']].map(([k, n]) => ({ img: I[k], n }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.perfil { display: flex; gap: 24px; padding: 32px; align-items: flex-start; }
+.perfil-esquerda { width: 320px; flex: none; display: flex; flex-direction: column; gap: 16px; }
+.cartao-detetive { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.cartao-detetive h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; line-height: 1.1; text-align: center; overflow-wrap: anywhere; }
+.perfil-desde { font-size: 15px; color: var(--fog); }
+.rank { align-self: stretch; display: flex; gap: 12px; align-items: center; padding: 10px; background: var(--ink); border: 4px solid var(--amber); }
+.rank-info { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.rank-linha { display: flex; justify-content: space-between; font-size: 14px; letter-spacing: 1px; color: var(--fog); }
+.rank-proximo { font-size: 12px; color: var(--fog); letter-spacing: 1px; }
+.especialidades { align-self: stretch; display: flex; gap: 6px; flex-wrap: wrap; }
+.especialidades span { font-size: 12px; padding: 4px 8px; background: var(--slate); letter-spacing: 1px; }
+.numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.numeros div { padding: 12px 8px; background: var(--night); border: 4px solid var(--deep); display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.numeros b { font-size: 32px; font-weight: 400; line-height: 1; }
+.numeros span { font-size: 12px; color: var(--fog); letter-spacing: 1px; text-align: center; }
+
+.perfil-meio { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.fechados { display: flex; flex-direction: column; padding: 4px 12px; }
+.fechados li { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 4px solid var(--ink); }
+.fechados img { width: 24px; height: 36px; }
+.fechado-info { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; font-size: 18px; color: var(--paper); text-decoration: none; }
+.fechado-info:hover { color: var(--amber-l); }
+.fechado-info .texto { font-size: 14px; color: var(--fog); }
+.papel-caso { font-size: 12px; letter-spacing: 1px; padding: 2px 6px; border: 2px solid var(--amber); color: var(--amber); }
+.papel-caso.encerrado { border-color: var(--fog); color: var(--fog); }
+.perfil-vazio { font-size: 14px; line-height: 1.5; color: var(--fog); padding: 12px 0; }
+.contribuicoes ul { display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+.contribuicoes .perfil-vazio { padding: 0; }
+.contribuicao { display: flex; gap: 12px; padding: 10px; background: var(--ink); border: 4px solid var(--deep); }
+.contribuicao-texto { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.contribuicao-tipo { font-size: 12px; letter-spacing: 1px; color: var(--fog); }
+.contribuicao .texto { font-size: 15px; line-height: 1.45; color: var(--paper); }
+.contribuicao-votos { align-self: center; font-size: 14px; color: var(--amber); }
+
+.conquistas { width: 360px; flex: none; }
+.conquistas-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px; }
+.conquista { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 4px; background: var(--ink); border: 4px solid var(--night); opacity: .7; font-size: 12px; letter-spacing: 1px; color: var(--dusk); }
+.conquista > span { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--ink); border: 4px solid var(--void); }

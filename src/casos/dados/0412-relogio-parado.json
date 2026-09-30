@@ -1,0 +1,176 @@
+{
+  "id": "0412",
+  "titulo": "O Relógio Parado",
+  "bairro": "CENTRO LUZ",
+  "local": "Hotel Alvorada",
+  "dificuldade": 3,
+  "mapa": { "x": 325, "y": 249 },
+  "resumo": "Hotel Alvorada, quarto 304. O relojoeiro Otávio Brandão foi encontrado morto. O relógio da parede marca 22:17.",
+  "relatorio": [
+    "Otávio Brandão, 67, relojoeiro, foi encontrado sem vida no quarto 304 do Hotel Alvorada. Hospedava-se ali havia uma semana. O relógio de parede está parado às 22:17. A janela estava aberta, apesar da chuva.",
+    "Não há sinais de arrombamento na porta. Uma xícara de chá quebrada foi recolhida para perícia."
+  ],
+  "acusacao": "Quem parou o relógio?",
+  "vitima": {
+    "nome": "Otávio Brandão",
+    "curto": "Otávio",
+    "aparencia": { "pele": "clara", "cabelo": "careca", "corCabelo": "fog", "sobrancelha": "haze", "oculos": true, "bigode": true, "casaco": "paper3", "camisa": "paper", "gravata": "redD" }
+  },
+  "cena": {
+    "cenario": "quarto-hotel",
+    "titulo": "QUARTO 304",
+    "contexto": "Encontrado às 23:40 · chuva forte · janela aberta",
+    "pontos": [
+      { "ancora": "relogio", "texto": "Relógio parado às 22:17. Vidro intacto: o pêndulo foi travado com um fósforo.", "pista": "relogio-parado" },
+      { "ancora": "gaveta", "texto": "Na gaveta de cima, um bilhete rasgado com a letra de Otávio.", "pista": "bilhete-rasgado" },
+      { "ancora": "corpo", "texto": "No bolso do casaco da vítima, um recibo de penhor dobrado em quatro.", "pista": "recibo-penhor" },
+      { "ancora": "pegadas", "texto": "Pegadas molhadas vão da janela até o meio do quarto e voltam.", "pista": "pegadas-molhadas" },
+      { "ancora": "xicara", "texto": "Xícara quebrada com chá frio. Há um pó branco grudado no fundo.", "pista": "xicara-residuo" },
+      { "ancora": "mesa", "texto": "Entre os papéis da mesa, um rascunho de carta ao tabelião.", "pista": "rascunho-testamento" },
+      { "ancora": "janela", "texto": "A janela dá para a escada de incêndio. O parapeito está encharcado de chuva." }
+    ]
+  },
+  "suspeitos": [
+    {
+      "id": "irene",
+      "nome": "Irene Brandão",
+      "curto": "Irene",
+      "papel": "Sobrinha e única herdeira",
+      "genero": "f",
+      "alibi": "Jantava no restaurante do térreo até 22h30.",
+      "abertura": ["Já contei tudo ao sargento.", "Pergunte o que quiser, mas seja rápido."],
+      "aparencia": { "pele": "clara", "cabelo": "longo", "corCabelo": "cork2", "casaco": "redD", "camisa": "paper", "brinco": true, "labios": "red" },
+      "perguntas": [
+        { "id": "onde-estava", "texto": "Onde você estava na quinta à noite?", "resposta": ["Jantando no restaurante do térreo, sozinha.", "Fiquei até tarde, umas dez e meia."], "tensao": "baixa" },
+        { "id": "relacao-tio", "texto": "Como era sua relação com seu tio?", "resposta": ["Meu tio nunca deixava aquele relógio atrasar.", "Era pontual com tudo, inclusive com as cobranças.", "Mas eu gostava dele, se é o que quer saber."], "tensao": "media" },
+        { "id": "confirma-jantar", "texto": "Alguém pode confirmar o jantar?", "resposta": ["Tenho a conta aqui, olhe o horário: 22:31.", "Quando aquele relógio parou, eu ainda estava na sobremesa."], "revela": ["conta-restaurante"], "tensao": "baixa" },
+        { "id": "bilhete", "texto": "Seu tio pediu que você fosse ao 304.", "mostra": "bilhete-rasgado", "resposta": ["É a letra dele, sim.", "Ele queria me ver às dez, mas eu não fui.", "Estava cansada, só isso."], "tensao": "media" },
+        { "id": "penhor", "texto": "O que é este recibo de penhor?", "mostra": "recibo-penhor", "resposta": ["Eu ia recuperar o relógio de ouro antes que ele notasse.", "Eu ia! Estava apertada, só isso.", "Isso não faz de mim uma assassina."], "tensao": "alta" },
+        { "id": "depois-jantar", "texto": "Você saiu do restaurante às 22:31. Onde estava às 22:40?", "requer": ["discussao-2240", "conta-restaurante"], "resposta": ["Eu… subi para o meu quarto.", "Sozinha. Não, ninguém me viu.", "Posso ir agora?"], "tensao": "alta" }
+      ]
+    },
+    {
+      "id": "caio",
+      "nome": "Caio Mendes",
+      "curto": "Caio",
+      "papel": "Gerente do hotel",
+      "genero": "m",
+      "alibi": "Revisava contas no escritório. Sozinho.",
+      "abertura": ["O Hotel Alvorada nunca teve um escândalo desses.", "Vamos resolver isso com discrição, sim?"],
+      "aparencia": { "pele": "media", "cabelo": "curto", "corCabelo": "void", "casaco": "slate", "camisa": "paper", "gravata": "red", "bigode": true, "oculos": true },
+      "perguntas": [
+        { "id": "onde-estava", "texto": "Onde você estava às dez da noite?", "resposta": ["No escritório, fechando o caixa.", "Sozinho, como toda quinta."], "tensao": "baixa" },
+        { "id": "chaves", "texto": "Quem tem acesso às chaves dos quartos?", "resposta": ["Eu, a recepção e as camareiras.", "E a chave mestra do terceiro andar… ela sumiu do quadro da recepção."], "revela": ["chave-mestra"], "tensao": "media" },
+        { "id": "visitas", "texto": "Otávio recebeu alguma visita?", "resposta": ["A sobrinha perguntou por ele no balcão, umas nove.", "Disse que subiria depois do jantar."], "tensao": "baixa" },
+        { "id": "pagou-rui", "texto": "Rui disse que você foi pagá-lo no camarim.", "requer": ["intervalo-rui"], "resposta": ["Fui, às onze em ponto.", "Ele estava encharcado. Achei estranho: o camarim tem teto."], "tensao": "media" },
+        { "id": "chave-mestra", "texto": "A chave mestra sumiu da recepção. Onde ela está?", "mostra": "chave-mestra", "resposta": ["Está bem, fui eu.", "Às 23h40 ninguém respondia no 304 e eu abri a porta.", "Foi quando achei o Sr. Brandão. Esqueci de devolver a chave."], "tensao": "alta" }
+      ]
+    },
+    {
+      "id": "lucia",
+      "nome": "Lúcia Farias",
+      "curto": "Lúcia",
+      "papel": "Camareira do 3º andar",
+      "genero": "f",
+      "alibi": "Ouviu uma discussão às 22:40 no corredor.",
+      "abertura": ["Trabalho neste andar há vinte anos, senhor.", "Nunca vi nada parecido."],
+      "aparencia": { "pele": "escura", "cabelo": "coque", "corCabelo": "fog", "sobrancelha": "haze", "casaco": "dusk", "camisa": "white", "labios": "redD" },
+      "perguntas": [
+        { "id": "noite", "texto": "O que você fez naquela noite?", "resposta": ["Levei chá ao 304 às dez.", "Ele pediu duas xícaras, disse que esperava a sobrinha."], "revela": ["duas-xicaras"], "tensao": "baixa" },
+        { "id": "ouviu", "texto": "Você ouviu alguma coisa?", "resposta": ["Ouvi vozes alteradas no 304.", "Umas dez e quarenta, por aí.", "Um homem e uma mulher."], "revela": ["discussao-2240"], "tensao": "media" },
+        { "id": "horario", "texto": "Tem certeza do horário?", "requer": ["discussao-2240"], "resposta": ["Tenho. O relógio do corredor bateu a meia hora.", "Uns dez minutos depois começou a gritaria."], "tensao": "baixa" },
+        { "id": "po", "texto": "O que é esse pó na xícara?", "mostra": "xicara-residuo", "resposta": ["Quando levei a bandeja, as duas estavam limpas.", "Esse pó não é açúcar, senhor. O açúcar vai no pote."], "tensao": "media" },
+        { "id": "relogio", "texto": "O relógio do quarto parou às 22:17.", "mostra": "relogio-parado", "requer": ["discussao-2240"], "resposta": ["22:17? Não pode ser.", "Às 22:40 ele estava vivo e brigando com alguém."], "tensao": "media" }
+      ]
+    },
+    {
+      "id": "rui",
+      "nome": "Rui “Faísca” Toledo",
+      "curto": "Rui",
+      "papel": "Músico do Bar Neblina",
+      "genero": "m",
+      "alibi": "Tocava no bar até 23h. Ninguém confirmou.",
+      "abertura": ["Olha, eu tenho show hoje de novo.", "Vamos ser rápidos?"],
+      "aparencia": { "pele": "media", "cabelo": "curto", "corCabelo": "void", "chapeu": "ink", "faixaChapeu": "red", "casaco": "deep", "camisa": "paper2", "gravata": "amber" },
+      "perguntas": [
+        { "id": "onde-estava", "texto": "Onde você estava na quinta à noite?", "resposta": ["No palco do Bar Neblina, como toda quinta."], "tensao": "baixa" },
+        { "id": "confirma", "texto": "Alguém pode confirmar?", "resposta": ["Metade do bar, pergunte a qualquer um.", "O Caio sabe, ele foi lá me pagar."], "tensao": "baixa" },
+        { "id": "saiu-palco", "texto": "Você saiu do palco em algum momento?", "resposta": ["Subi no palco às nove e meia e toquei até as onze.", "Bom… teve um intervalo curto, uns quinze minutos.", "Mas fiquei no camarim, juro."], "revela": ["intervalo-rui"], "tensao": "media" },
+        { "id": "conhecia", "texto": "Você conhecia o Sr. Brandão?", "resposta": ["Todo mundo conhecia.", "Consertou meu metrônomo uma vez. Gente boa."], "tensao": "media" },
+        { "id": "pegadas", "texto": "Estas pegadas vêm da escada de incêndio.", "mostra": "pegadas-molhadas", "requer": ["intervalo-rui"], "resposta": ["Tá, tá! Subi pela escada de incêndio no intervalo, umas dez pras onze.", "Ele me devia dinheiro, eu fui cobrar.", "A janela estava aberta e ele… já estava no chão. Corri."], "revela": ["promissoria-rui"], "tensao": "alta" },
+        { "id": "janela", "texto": "Por que a janela estava aberta?", "requer": ["promissoria-rui"], "resposta": ["Já estava aberta quando cheguei.", "Alguém abriu antes. Pra arejar… ou pra parecer que entraram por ali."], "tensao": "media" }
+      ]
+    }
+  ],
+  "pistas": [
+    { "id": "relogio-parado", "nome": "Relógio parado", "descricao": "Ponteiros travados em 22:17. Vidro intacto: foi parado por dentro, à mão.", "icone": "relogio", "importante": true },
+    { "id": "bilhete-rasgado", "nome": "Bilhete rasgado", "descricao": "“Irene, às dez, no 304. Traga o…” O resto foi arrancado.", "icone": "carta", "importante": true },
+    { "id": "recibo-penhor", "nome": "Recibo de penhor", "descricao": "Relógio de bolso de ouro penhorado 3 dias antes, em nome de I. Brandão.", "icone": "recibo" },
+    { "id": "pegadas-molhadas", "nome": "Pegadas molhadas", "descricao": "Saem da janela e voltam para ela. Sola de borracha, número grande.", "icone": "pegada" },
+    { "id": "xicara-residuo", "nome": "Xícara com resíduo", "descricao": "Chá frio com pó branco no fundo. Enviada à perícia.", "icone": "xicara" },
+    { "id": "rascunho-testamento", "nome": "Rascunho ao tabelião", "descricao": "“Mudar o testamento na segunda. A oficina não fica com quem me rouba.”", "icone": "carta", "importante": true },
+    { "id": "chave-mestra", "nome": "Chave mestra sumiu", "descricao": "A chave mestra do 3º andar não está no quadro da recepção.", "icone": "chave" },
+    { "id": "discussao-2240", "nome": "Discussão às 22:40", "descricao": "Lúcia ouviu um homem e uma mulher discutindo no 304 às 22:40.", "icone": "alerta", "importante": true },
+    { "id": "duas-xicaras", "nome": "Chá para dois", "descricao": "Otávio pediu chá com duas xícaras às 22h: esperava a sobrinha.", "icone": "xicara" },
+    { "id": "conta-restaurante", "nome": "Conta do jantar", "descricao": "Conta do restaurante do térreo, fechada por Irene às 22:31.", "icone": "recibo" },
+    { "id": "intervalo-rui", "nome": "Intervalo de Rui", "descricao": "Rui parou de tocar por uns 15 minutos, perto das 22:45.", "icone": "relogio" },
+    { "id": "promissoria-rui", "nome": "Promissória vencida", "descricao": "Otávio devia dinheiro a Rui. A promissória venceu na quinta.", "icone": "recibo" }
+  ],
+  "motivos": [
+    { "id": "heranca-dividas", "texto": "Herança e dívidas" },
+    { "id": "ciumes", "texto": "Ciúmes" },
+    { "id": "vinganca", "texto": "Vingança antiga" },
+    { "id": "emprestimo", "texto": "Cobrança de um empréstimo" },
+    { "id": "acidente", "texto": "Acidente encoberto" }
+  ],
+  "solucao": {
+    "culpado": "irene",
+    "motivo": "heranca-dividas",
+    "evidencias": ["relogio-parado", "discussao-2240"],
+    "relatorio": [
+      "Irene subiu ao 304 depois de fechar a conta do jantar, às 22:31. O tio a esperava com chá para dois e com o recibo do relógio de ouro que ela havia penhorado.",
+      "Na discussão das 22:40, ouvida por Lúcia, Otávio ameaçou tirá-la do testamento. Irene pôs uma dose de calmante no chá; o coração fraco do tio não aguentou. Depois ela atrasou os ponteiros para 22:17 e travou o pêndulo, para parecer que tudo aconteceu enquanto ainda jantava.",
+      "As pegadas na janela eram de Rui, que subiu pela escada de incêndio para cobrar a promissória e fugiu ao ver o corpo. A chave mestra sumiu só depois: foi Caio quem abriu o quarto às 23:40."
+    ]
+  },
+  "coopSimulado": {
+    "abertoPor": "sgt.moreira",
+    "eventos": [
+      { "autor": "sgt.moreira", "minutosAtras": 4320, "tipo": "examinou", "ancora": "relogio" },
+      { "autor": "sgt.moreira", "minutosAtras": 4318, "tipo": "examinou", "ancora": "pegadas" },
+      { "autor": "sgt.moreira", "minutosAtras": 4315, "tipo": "foto-cena", "ancora": "relogio", "legenda": "Relógio · 22:17", "x": 392, "y": 300 },
+      { "autor": "sgt.moreira", "minutosAtras": 4310, "tipo": "recorte", "recorte": "gazeta", "fonte": "GAZETA DA GAROA · 3ª EDIÇÃO", "titulo": "RELOJOEIRO É ACHADO MORTO NO HOTEL ALVORADA", "texto": "O conhecido artesão da Rua das Horas deixa oficina e herança. Polícia não descarta nenhuma hipótese e ouve hóspedes e funcionários.", "x": 256, "y": 560 },
+      { "autor": "sgt.moreira", "minutosAtras": 4300, "tipo": "nota", "nota": "pegadas", "texto": "Pegadas saem da janela, não da porta.", "x": 632, "y": 260 },
+      { "autor": "sgt.moreira", "minutosAtras": 4299, "tipo": "fio", "de": "nota:pegadas", "para": "cena:relogio" },
+      { "autor": "sgt.moreira", "minutosAtras": 4298, "tipo": "fio", "de": "vitima", "para": "cena:relogio" },
+      { "autor": "sgt.moreira", "minutosAtras": 4290, "tipo": "teoria", "teoria": "entrada-janela", "titulo": "Entrada pela janela", "texto": "As pegadas indicam que alguém entrou pela escada de incêndio, não pela porta.", "votosBase": 6 },
+      { "autor": "sgt.moreira", "minutosAtras": 4200, "tipo": "perguntou", "suspeito": "irene", "pergunta": "relacao-tio" },
+      { "autor": "sgt.moreira", "minutosAtras": 4199, "tipo": "marcou-trecho", "suspeito": "irene", "pergunta": "relacao-tio", "trecho": 0 },
+      { "autor": "lupa_ana", "minutosAtras": 2880, "tipo": "examinou", "ancora": "gaveta" },
+      { "autor": "caju", "minutosAtras": 1440, "tipo": "examinou", "ancora": "corpo" },
+      { "autor": "caju", "minutosAtras": 1435, "tipo": "examinou", "ancora": "xicara" },
+      { "autor": "caju", "minutosAtras": 1430, "tipo": "nota", "nota": "penhor", "texto": "Recibo de penhor em nome de Irene, 3 dias antes. Precisava de dinheiro?", "x": 248, "y": 40 },
+      { "autor": "caju", "minutosAtras": 1429, "tipo": "fio", "de": "nota:penhor", "para": "suspeito:irene" },
+      { "autor": "caju", "minutosAtras": 1428, "tipo": "fio", "de": "suspeito:irene", "para": "vitima" },
+      { "autor": "caju", "minutosAtras": 1420, "tipo": "pista-no-quadro", "pista": "xicara-residuo", "x": 632, "y": 460 },
+      { "autor": "caju", "minutosAtras": 1419, "tipo": "fio", "de": "pista:xicara-residuo", "para": "suspeito:lucia" },
+      { "autor": "caju", "minutosAtras": 1400, "tipo": "teoria", "teoria": "divida-familia", "titulo": "Dívida de família", "texto": "O penhor mostra que Irene precisava de dinheiro. Ela herda a oficina.", "suspeito": "irene", "votosBase": 9 },
+      { "autor": "nevoeiro", "minutosAtras": 150, "tipo": "perguntou", "suspeito": "caio", "pergunta": "chaves" },
+      { "autor": "nevoeiro", "minutosAtras": 148, "tipo": "pista-no-quadro", "pista": "chave-mestra", "x": 64, "y": 664 },
+      { "autor": "nevoeiro", "minutosAtras": 147, "tipo": "fio", "de": "suspeito:caio", "para": "pista:chave-mestra" },
+      { "autor": "nevoeiro", "minutosAtras": 145, "tipo": "teoria", "teoria": "gerente-chave", "titulo": "O gerente tinha a chave", "texto": "Só Caio tem acesso ao quadro de chaves da recepção.", "suspeito": "caio", "votosBase": 3 },
+      { "autor": "nevoeiro", "minutosAtras": 122, "tipo": "perguntou", "suspeito": "rui", "pergunta": "onde-estava" },
+      { "autor": "nevoeiro", "minutosAtras": 121, "tipo": "perguntou", "suspeito": "rui", "pergunta": "confirma" },
+      { "autor": "nevoeiro", "minutosAtras": 120, "tipo": "marcou-trecho", "suspeito": "rui", "pergunta": "confirma", "trecho": 1 },
+      { "autor": "nevoeiro", "minutosAtras": 119, "tipo": "nota", "nota": "bar", "texto": "Rui diz que tocou até as 23h. Alguém do bar confirma?", "x": 600, "y": 600 },
+      { "autor": "nevoeiro", "minutosAtras": 118, "tipo": "fio", "de": "nota:bar", "para": "suspeito:rui" },
+      { "autor": "nevoeiro", "minutosAtras": 117, "tipo": "pausou", "suspeito": "rui" },
+      { "autor": "lupa_ana", "minutosAtras": 30, "tipo": "perguntou", "suspeito": "lucia", "pergunta": "ouviu" },
+      { "autor": "lupa_ana", "minutosAtras": 29, "tipo": "marcou-trecho", "suspeito": "lucia", "pergunta": "ouviu", "trecho": 0 },
+      { "autor": "lupa_ana", "minutosAtras": 5, "tipo": "nota", "nota": "horario", "texto": "O relógio parou às 22:17, mas Lúcia ouviu a discussão às 22:40.", "x": 200, "y": 264 },
+      { "autor": "lupa_ana", "minutosAtras": 4, "tipo": "fio", "de": "cena:relogio", "para": "nota:horario" },
+      { "autor": "lupa_ana", "minutosAtras": 4, "tipo": "fio", "de": "nota:horario", "para": "suspeito:lucia" },
+      { "autor": "lupa_ana", "minutosAtras": 3, "tipo": "teoria", "teoria": "hora-forjada", "titulo": "A hora foi forjada", "texto": "Alguém parou o relógio para criar um álibi. Se a discussão foi às 22:40, Otávio ainda estava vivo às 22:17.", "votosBase": 14 }
+    ]
+  }
+}

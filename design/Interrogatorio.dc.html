@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="pixel.js"></script>
+<style>body{margin:0;background:#07061a;} a{color:#ffb43a;} a:hover{color:#ffdd7e;} img{image-rendering:pixelated;}</style>
+</helmet>
+<div data-screen-label="04 Interrogatório" style="width:1440px; height:900px; background:#07061a; font-family:'Pixelify Sans',monospace; color:#ebdfc2; display:flex; flex-direction:column; overflow:hidden;">
+  <div style="height:64px; flex:none; display:flex; align-items:center; gap:16px; padding:0 20px; background:#0e0d24; border-bottom:4px solid #302d68; box-sizing:border-box;">
+    <img src="{{ A.icons.lupa }}" style="width:40px; height:40px;">
+    <span style="font-size:28px; font-weight:700; color:#ffb43a; letter-spacing:3px;">GAROA</span>
+    <span style="font-size:16px; color:#9e9fc9; letter-spacing:1px;">▸ CASO #0412 ▸ INTERROGATÓRIO</span>
+    <div style="margin-left:auto; font-size:14px; color:#ebdfc2; background:#302d68; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #221f4e, inset 4px 4px 0 #46457f; padding:6px 12px;">◂ VOLTAR AO CASO</div>
+    <div style="width:48px; height:48px; border:4px solid #ffb43a; background:#161538; overflow:hidden; position:relative; box-sizing:border-box;"><img src="{{ A.pt.vega }}" style="position:absolute; left:-44px; top:-40px; width:128px; height:128px;"></div>
+  </div>
+  <div style="flex:1; display:flex; min-height:0;">
+    <div style="position:relative; width:1024px; flex:none; overflow:hidden; background-color:#0e0d24; background-image:url({{ A.dNight }}); background-size:16px 16px;">
+      <div style="position:absolute; left:0; right:0; top:0; height:404px; background:repeating-linear-gradient(90deg,#161538 0 60px,#0e0d24 60px 64px);"></div>
+      <img src="{{ A.cone }}" style="position:absolute; left:332px; top:-20px; width:360px; height:440px; opacity:.9;">
+      <div style="position:absolute; left:496px; top:0; width:32px; height:24px; background:#302d68; border:4px solid #07061a; border-top:none;"></div>
+      <div style="position:absolute; left:500px; top:24px; width:24px; height:8px; background:#ffdd7e;"></div>
+      <img src="{{ A.pt64.rui }}" style="position:absolute; left:384px; top:148px; width:256px; height:256px;">
+      <div style="position:absolute; left:0; right:0; top:404px; height:8px; background:#9b6b3d;"></div>
+      <div style="position:absolute; left:0; right:0; top:412px; bottom:0; background:#6a4628;"></div>
+      <div style="position:absolute; left:0; right:0; top:412px; height:4px; background:#07061a;"></div>
+      <div style="position:absolute; left:392px; top:414px; padding:6px 14px; background:#c26f1f; border:4px solid #07061a; box-shadow:inset -4px -4px 0 #6a4628, inset 4px 4px 0 #ffb43a; color:#07061a; font-size:16px; letter-spacing:2px;">RUI “FAÍSCA” TOLEDO</div>
+      <img src="{{ A.icons.carta }}" style="position:absolute; left:680px; top:416px; width:48px; height:48px;">
+      <img src="{{ A.icons.xicara }}" style="position:absolute; left:296px; top:412px; width:48px; height:48px;">
+
+      <div style="position:absolute; left:24px; top:24px; display:flex; flex-direction:column; gap:8px;">
+        <span style="font-size:14px; letter-spacing:2px; color:#9e9fc9;">SUSPEITOS</span>
+        <sc-for list="{{ others }}" as="o" hint-placeholder-count="4">
+          <div style="position:relative; width:64px; height:64px; border:4px solid {{ o.border }}; overflow:hidden; background:#161538; box-sizing:border-box; opacity:{{ o.op }}; cursor:pointer;"><img src="{{ o.img }}" style="position:absolute; left:-36px; top:-32px; width:128px; height:128px;"><sc-if value="{{ o.done }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; right:0; bottom:0; width:16px; height:16px; background:#9e9fc9; color:#07061a; font-size:12px; display:flex; align-items:center; justify-content:center;">✓</span></sc-if></div>
+        </sc-for>
+      </div>
+      <div style="position:absolute; right:24px; top:24px; width:240px; display:flex; flex-direction:column; gap:8px; padding:10px; background:#07061a; border:4px solid #302d68;">
+        <div style="display:flex; justify-content:space-between; font-size:14px; letter-spacing:1px;"><span style="color:#9e9fc9;">PERGUNTA</span><span>3 / 6</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:14px; letter-spacing:1px;"><span style="color:#9e9fc9;">NERVOSISMO</span><span style="color:#e2433b;">ALTO</span></div>
+        <div style="height:12px; background:repeating-linear-gradient(90deg,#221f4e 0 20px,#07061a 20px 24px);"><div style="width:72%; height:12px; background:repeating-linear-gradient(90deg,#e2433b 0 20px,#07061a 20px 24px);"></div></div>
+        <span style="font-family:'Courier Prime',monospace; font-size:13px; line-height:1.45; color:#d0bf99;">Continuando a sessão de <span style="color:#9e9fc9;">@nevoeiro</span>. As perguntas 1 e 2 já foram feitas.</span>
+      </div>
+
+      <div style="position:absolute; left:24px; right:24px; bottom:24px; height:332px; display:flex; background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #ebdfc2, 8px 8px 0 #000; padding:8px; box-sizing:border-box;">
+        <div style="position:absolute; left:24px; top:-24px; padding:4px 12px; background:#ffb43a; color:#07061a; font-size:16px; letter-spacing:2px; border:4px solid #07061a;">RUI</div>
+        <div style="flex:1; min-width:0; position:relative; padding:28px 20px 16px; display:flex; flex-direction:column; gap:12px;">
+          <p style="margin:0; font-family:'Courier Prime',monospace; font-size:19px; line-height:1.7; color:#ebdfc2; text-wrap:pretty;">Subi no palco às nove e meia, como toda quinta. Toquei até as onze, sem parar. <span style="background:#ffb43a; color:#07061a;">Bom… teve um intervalo curto, uns quinze minutos,</span> mas fiquei no camarim. <span style="border-bottom:4px solid #e2433b;">O Caio sabe, ele foi lá me pagar.</span></p>
+          <div style="position:absolute; left:380px; top:-40px; display:flex; gap:4px; padding:4px; background:#07061a; border:4px solid #ffb43a; box-shadow:4px 4px 0 #000;">
+            <div style="font-size:14px; color:#07061a; background:#ffb43a; padding:6px 10px; border:2px solid #07061a; cursor:pointer;" style-hover="background:#ffdd7e;">✚ MARCAR COMO PISTA</div>
+            <div style="font-size:14px; color:#ebdfc2; background:#302d68; padding:6px 10px; border:2px solid #07061a; cursor:pointer;" style-hover="background:#46457f;">✎ ANOTAR</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; font-size:12px; letter-spacing:1px; color:#e2433b;"><span style="width:12px; height:4px; background:#e2433b;"></span>TRECHO MARCADO POR @NEVOEIRO · SUBLINHADO</div>
+          <span style="position:absolute; right:20px; bottom:12px; font-size:18px; color:#ffb43a;">▼</span>
+        </div>
+        <div style="width:360px; flex:none; display:flex; flex-direction:column; gap:4px; padding:16px 12px; background:#0e0d24; border-left:4px solid #302d68;">
+          <span style="font-size:14px; letter-spacing:2px; color:#9e9fc9; margin-bottom:4px;">PERGUNTAR</span>
+          <div style="display:flex; gap:8px; padding:8px 10px; background:#302d68; border:2px solid #ffb43a; font-family:'Courier Prime',monospace; font-size:15px; line-height:1.4; color:#ffdd7e; cursor:pointer;"><span style="font-family:'Pixelify Sans';">▶</span>Que horas foi esse intervalo?</div>
+          <div style="display:flex; gap:8px; padding:8px 10px; border:2px solid transparent; font-family:'Courier Prime',monospace; font-size:15px; line-height:1.4; color:#ebdfc2; cursor:pointer;" style-hover="background:#161538; border-color:#46457f;"><span style="font-family:'Pixelify Sans'; color:#46457f;">▶</span>Você conhecia o Sr. Brandão?</div>
+          <div style="display:flex; gap:8px; align-items:center; padding:8px 10px; border:2px solid transparent; font-family:'Courier Prime',monospace; font-size:15px; line-height:1.4; color:#ebdfc2; cursor:pointer;" style-hover="background:#161538; border-color:#46457f;"><img src="{{ A.icons.carta }}" style="width:24px; height:24px;"><span><span style="font-family:'Pixelify Sans'; color:#e2433b;">MOSTRAR</span> Bilhete rasgado</span></div>
+          <div style="display:flex; gap:8px; padding:8px 10px; border:2px solid transparent; font-family:'Courier Prime',monospace; font-size:15px; line-height:1.4; color:#46457f;"><span style="font-family:'Pixelify Sans';">▶</span>Por que a janela estava aberta? <span style="font-family:'Pixelify Sans'; font-size:12px;">[PRECISA DE PISTA]</span></div>
+          <div style="margin-top:auto; padding:8px 10px; font-size:14px; letter-spacing:1px; color:#9e9fc9; border-top:4px solid #161538; cursor:pointer;" style-hover="color:#ebdfc2;">⏸ PAUSAR E DEIXAR PARA A EQUIPE</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:16px; padding:16px; background:#0e0d24; border-left:4px solid #302d68;">
+      <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+        <div style="display:flex; justify-content:space-between; padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;"><span>TRECHOS MARCADOS</span><span style="color:#9e9fc9; font-size:14px;">3</span></div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:8px;">
+          <sc-for list="{{ marks }}" as="m" hint-placeholder-count="3">
+            <div style="padding:10px 12px; background:#ebdfc2; border-left:8px solid {{ m.color }}; display:flex; flex-direction:column; gap:6px;">
+              <span style="font-family:'Courier Prime',monospace; font-size:15px; line-height:1.45; color:#221f4e;">“{{ m.q }}”</span>
+              <div style="display:flex; justify-content:space-between; font-size:12px; letter-spacing:1px; color:#6a4628;"><span>{{ m.src }}</span><span>@{{ m.who }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#161538; border:4px solid #07061a; box-shadow:inset 0 0 0 4px #302d68; padding:4px;">
+        <div style="padding:8px 12px; background:#302d68; font-size:16px; letter-spacing:2px; color:#ffdd7e;">HISTÓRICO DA SESSÃO</div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:12px;">
+          <sc-for list="{{ log }}" as="l" hint-placeholder-count="3">
+            <div style="display:flex; gap:10px;">
+              <span style="font-size:14px; color:{{ l.color }}; width:28px; flex:none;">{{ l.n }}</span>
+              <div style="display:flex; flex-direction:column; gap:2px;"><span style="font-family:'Courier Prime',monospace; font-size:14px; line-height:1.4; color:#ebdfc2;">{{ l.q }}</span><span style="font-size:12px; letter-spacing:1px; color:#9e9fc9;">{{ l.meta }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { art: null };
+  componentDidMount() { this._t = setInterval(() => { if (window.PX) { clearInterval(this._t); this.setState({ art: window.PX.get() }); } }, 30); }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const A = this.state.art || { icons: {}, pt: {}, pt64: {} };
+    return {
+      A,
+      others: [
+        { img: A.pt.irene, border: '#302d68', op: 1, done: true },
+        { img: A.pt.caio, border: '#302d68', op: 1, done: true },
+        { img: A.pt.lucia, border: '#302d68', op: 1, done: true },
+        { img: A.pt.rui, border: '#ffb43a', op: 1, done: false }
+      ],
+      marks: [
+        { q: 'O Caio sabe, ele foi lá me pagar.', src: 'RUI · PERGUNTA 2', who: 'nevoeiro', color: '#9e9fc9' },
+        { q: 'Ouvi vozes alteradas no 304. Umas dez e quarenta, por aí.', src: 'LÚCIA · PERGUNTA 4', who: 'lupa_ana', color: '#4fd1c5' },
+        { q: 'Meu tio nunca deixava aquele relógio atrasar.', src: 'IRENE · PERGUNTA 1', who: 'vega', color: '#ffb43a' }
+      ],
+      log: [
+        { n: 'P1', q: 'Onde você estava na quinta à noite?', meta: '@NEVOEIRO · HÁ 2 H', color: '#9e9fc9' },
+        { n: 'P2', q: 'Alguém pode confirmar?', meta: '@NEVOEIRO · HÁ 2 H', color: '#9e9fc9' },
+        { n: 'P3', q: 'Você saiu do palco em algum momento?', meta: '@VEGA · AGORA', color: '#ffb43a' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
